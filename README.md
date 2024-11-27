@@ -1,4 +1,4 @@
-# Awsome LLM-as-a-Judge
+# Awesome LLM-as-a-Judge
 
 ## Survey
 

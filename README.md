@@ -1,4 +1,4 @@
-# Large Language Model as Evaluator
+# Awsome LLM-as-a-Judge
 
 ## Survey
 

@@ -1,12 +1,51 @@
 # Awesome LLM-as-a-Judge
 
-## Survey
+This repo include the papers discussed in our survey paper *[A Survey on LLM-as-a-Judge](https://arxiv.org/abs/2411.15594)*
+
+
+
+### Reference
+
+Feel free to cite if you find our survey is useful for your research:
+
+```
+@article{gu2024surveyllmasajudge,
+	title   = {A Survey on LLM-as-a-Judge},
+	author  = {Jiawei Gu and Xuhui Jiang and Zhichao Shi and Hexiang Tan and Xuehao Zhai and Chengjin Xu and Wei Li and Yinghan Shen and Shengjie Ma and Honghao Liu and Yuanzhuo Wang and Jian Guo},
+	year    = {2024},
+	journal = {arXiv preprint arXiv: 2411.15594}
+}
+```
+
+
+
+### Overview of LLM-as-a-Judge
+
+![overview](F:/Work/IDEA/工作内容/LLM as Evaluator/LLM-as-a-Judge/images/overview.jpg)
+
+
+
+### Evaluation Pipelines of LLM-as-a-Judge
+
+![evaluation_pipeline](F:/Work/IDEA/工作内容/LLM as Evaluator/LLM-as-a-Judge/images/evaluation_pipeline.jpg)
+
+
+
+### Improvement Strategies for LLM-as-a-Judge
+
+![improvement_strategy](F:/Work/IDEA/工作内容/LLM as Evaluator/LLM-as-a-Judge/images/improvement_strategy.jpg)
+
+
+
+### Paper List
+
+#### 1.Survey
 
 1. **Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges** `Preprint`
 
    *Aman Singh Thakur, Kartik Choudhary, Venkat Srinik Ramayapally, Sankaran Vaidyanathan, Dieuwke Hupkes* [[Paper](https://arxiv.org/abs/2406.12624)] [[Code](https://github.com/UMass-Meta-LLM-Eval/llm_eval)], 2024.07
 
-## Analysis
+#### 2.Analysis
 
 1. **A Comprehensive Analysis of the Effectiveness of Large Language Models as Automatic Dialogue Evaluators** `AAAI 2024`
 
@@ -72,7 +111,7 @@
 
     *Hui Wei, Shenghua He, Tian Xia, Andy Wong, Jingyang Lin, Mei Han* [[Paper](https://arxiv.org/abs/2408.13006)] [[Code](https://github.com/shenghh2015/llm-judge-eval)], 2024.08
 
-## Auto-Evaluator
+#### 3.Auto-Evaluator
 
 1. **On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs** `ICLR 2024 (oral)`
 

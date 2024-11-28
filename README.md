@@ -21,19 +21,19 @@ Feel free to cite if you find our survey is useful for your research:
 
 ### Overview of LLM-as-a-Judge
 
-![overview](F:/Work/IDEA/工作内容/LLM as Evaluator/LLM-as-a-Judge/images/overview.jpg)
+![overview](./images/overview.jpg)
 
 
 
 ### Evaluation Pipelines of LLM-as-a-Judge
 
-![evaluation_pipeline](F:/Work/IDEA/工作内容/LLM as Evaluator/LLM-as-a-Judge/images/evaluation_pipeline.jpg)
+![evaluation_pipeline](./images/evaluation_pipeline.jpg)
 
 
 
 ### Improvement Strategies for LLM-as-a-Judge
 
-![improvement_strategy](F:/Work/IDEA/工作内容/LLM as Evaluator/LLM-as-a-Judge/images/improvement_strategy.jpg)
+![improvement_strategy](./images/improvement_strategy.jpg)
 
 
 

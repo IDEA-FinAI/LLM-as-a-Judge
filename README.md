@@ -362,3 +362,25 @@ Feel free to cite if you find our survey is useful for your research:
 14. **Agent Q: Advanced Reasoning and Learning for Autonomous AI Agents** `Preprint`
 
     *Pranav Putta, Edmund Mills, Naman Garg, Sumeet Motwani, Chelsea Finn, Divyansh Garg, Rafael Rafailov* [[Paper](https://arxiv.org/abs/2408.07199)], 2024.08
+
+## New
+1. Finding Blind Spots in Evaluator LLMs with Interpretable Checklists `EMNLP2024`
+2. BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs
+3. Are LLMs Good Zero-Shot Fallacy Classifiers?
+4. Detecting Errors through Ensembling Prompts (DEEP): An End-to-End LLM Framework for Detecting Factual Errors
+5. Split and Merge: Aligning Position Biases in LLM-based Evaluators
+6. Annotation alignment: Comparing LLM and human annotations of conversational safety
+7. Humans or LLMs as the Judge? A Study on Judgement Bias
+8. RealVul: Can We Detect Vulnerabilities in Web Applications with LLM?
+9. A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data
+10. Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment
+11. RepEval: Effective Text Evaluation with LLM Representation
+12. Efficient LLM Comparative Assessment: A Product of Experts Framework for Pairwise Comparisons
+13. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales
+14. An LLM Feature-based Framework for Dialogue Constructiveness Assessment
+15. I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation
+16. Multi-News+: Cost-efficient Dataset Cleansing via LLM-based Data Annotation
+17. Bayesian Calibration of Win Rate Estimation with LLM Evaluators
+18. Evaluating Mathematical Reasoning Beyond Accuracy
+19. MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models
+20. Beyond Hallucinations: Enhancing LVLMs through Hallucination-Aware Direct Preference Optimization

@@ -365,22 +365,32 @@ Feel free to cite if you find our survey is useful for your research:
 
 ## New
 1. Finding Blind Spots in Evaluator LLMs with Interpretable Checklists `EMNLP2024`
-2. BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs
-3. Are LLMs Good Zero-Shot Fallacy Classifiers?
-4. Detecting Errors through Ensembling Prompts (DEEP): An End-to-End LLM Framework for Detecting Factual Errors
-5. Split and Merge: Aligning Position Biases in LLM-based Evaluators
-6. Annotation alignment: Comparing LLM and human annotations of conversational safety
-7. Humans or LLMs as the Judge? A Study on Judgement Bias
-8. RealVul: Can We Detect Vulnerabilities in Web Applications with LLM?
-9. A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data
-10. Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment
-11. RepEval: Effective Text Evaluation with LLM Representation
-12. Efficient LLM Comparative Assessment: A Product of Experts Framework for Pairwise Comparisons
-13. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales
-14. An LLM Feature-based Framework for Dialogue Constructiveness Assessment
-15. I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation
-16. Multi-News+: Cost-efficient Dataset Cleansing via LLM-based Data Annotation
-17. Bayesian Calibration of Win Rate Estimation with LLM Evaluators
-18. Evaluating Mathematical Reasoning Beyond Accuracy
-19. MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models
-20. Beyond Hallucinations: Enhancing LVLMs through Hallucination-Aware Direct Preference Optimization
+2. BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs `EMNLP2024`
+3. Are LLMs Good Zero-Shot Fallacy Classifiers? `EMNLP2024`
+4. Detecting Errors through Ensembling Prompts (DEEP): An End-to-End LLM Framework for Detecting Factual Errors `EMNLP2024`
+5. Split and Merge: Aligning Position Biases in LLM-based Evaluators `EMNLP2024`
+6. Annotation alignment: Comparing LLM and human annotations of conversational safety `EMNLP2024`
+7. Humans or LLMs as the Judge? A Study on Judgement Bias `EMNLP2024`
+8. RealVul: Can We Detect Vulnerabilities in Web Applications with LLM? `EMNLP2024`
+9. A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data `EMNLP2024`
+10. Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment `EMNLP2024`
+11. RepEval: Effective Text Evaluation with LLM Representation `EMNLP2024`
+12. Efficient LLM Comparative Assessment: A Product of Experts Framework for Pairwise Comparisons `EMNLP2024`
+13. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales `EMNLP2024`
+14. An LLM Feature-based Framework for Dialogue Constructiveness Assessment `EMNLP2024`
+15. I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation `EMNLP2024`
+16. Multi-News+: Cost-efficient Dataset Cleansing via LLM-based Data Annotation `EMNLP2024`
+17. Bayesian Calibration of Win Rate Estimation with LLM Evaluators `EMNLP2024`
+18. Evaluating Mathematical Reasoning Beyond Accuracy `preprint`
+19. MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models `preprint`
+20. Beyond Hallucinations: Enhancing LVLMs through Hallucination-Aware Direct Preference Optimization `preprint`
+21. LLaVA-RLHF Aligning Large Multimodal Models with Factually Augmented RLHF `ACL 2024 Findings`
+22. Alpagasus: Training A better alpaca with fewer data. `ICLR 2024`
+23. Concept-skill Transferability-based Data Selection for Large Vision-Language Models `EMNLP 2024`
+24. Less is More: High-value Data Selection for Visual Instruction Tuning `preprint`
+25. Data-Juicer: A One-Stop Data Processing System for Large Language Models `preprint`
+26. ShareGPT4V: Improving Large Multi-Modal Models with Better Captions `ECCV 2024`
+27. Visual Instruction Tuning `NIPS 2023`
+28. VBench: Comprehensive Benchmark Suite for Video Generative Models `preprint`
+29. RevisEval: Improving LLM-as-a-Judge via Response-Adapted References `preprint`
+30. Agent-as-a-Judge: Evaluate Agents with Agents `preprint`

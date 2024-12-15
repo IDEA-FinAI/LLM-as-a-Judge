@@ -365,32 +365,93 @@ Feel free to cite if you find our survey is useful for your research:
 
 ## New
 1. Finding Blind Spots in Evaluator LLMs with Interpretable Checklists `EMNLP2024`
-2. BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs `EMNLP2024`
-3. Are LLMs Good Zero-Shot Fallacy Classifiers? `EMNLP2024`
-4. Detecting Errors through Ensembling Prompts (DEEP): An End-to-End LLM Framework for Detecting Factual Errors `EMNLP2024`
-5. Split and Merge: Aligning Position Biases in LLM-based Evaluators `EMNLP2024`
-6. Annotation alignment: Comparing LLM and human annotations of conversational safety `EMNLP2024`
-7. Humans or LLMs as the Judge? A Study on Judgement Bias `EMNLP2024`
-8. RealVul: Can We Detect Vulnerabilities in Web Applications with LLM? `EMNLP2024`
-9. A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data `EMNLP2024`
-10. Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment `EMNLP2024`
-11. RepEval: Effective Text Evaluation with LLM Representation `EMNLP2024`
-12. Efficient LLM Comparative Assessment: A Product of Experts Framework for Pairwise Comparisons `EMNLP2024`
-13. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales `EMNLP2024`
-14. An LLM Feature-based Framework for Dialogue Constructiveness Assessment `EMNLP2024`
-15. I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation `EMNLP2024`
-16. Multi-News+: Cost-efficient Dataset Cleansing via LLM-based Data Annotation `EMNLP2024`
-17. Bayesian Calibration of Win Rate Estimation with LLM Evaluators `EMNLP2024`
-18. Evaluating Mathematical Reasoning Beyond Accuracy `preprint`
-19. MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models `preprint`
-20. Beyond Hallucinations: Enhancing LVLMs through Hallucination-Aware Direct Preference Optimization `preprint`
-21. LLaVA-RLHF Aligning Large Multimodal Models with Factually Augmented RLHF `ACL 2024 Findings`
-22. Alpagasus: Training A better alpaca with fewer data. `ICLR 2024`
-23. Concept-skill Transferability-based Data Selection for Large Vision-Language Models `EMNLP 2024`
-24. Less is More: High-value Data Selection for Visual Instruction Tuning `preprint`
-25. Data-Juicer: A One-Stop Data Processing System for Large Language Models `preprint`
-26. ShareGPT4V: Improving Large Multi-Modal Models with Better Captions `ECCV 2024`
-27. Visual Instruction Tuning `NIPS 2023`
-28. VBench: Comprehensive Benchmark Suite for Video Generative Models `preprint`
-29. RevisEval: Improving LLM-as-a-Judge via Response-Adapted References `preprint`
-30. Agent-as-a-Judge: Evaluate Agents with Agents `preprint`
+   
+   *Sumanth Doddapaneni, Mohammed Safi Ur Rahman Khan, Sshubam Verma, Mitesh M. Khapra* [paper](https://arxiv.org/abs/2406.13439)
+3. BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs `EMNLP2024`
+   
+   *Zhiting Fan, Ruizhe Chen, Ruiling Xu, Zuozhu Liu* [paper](https://arxiv.org/abs/2407.10241)
+5. Are LLMs Good Zero-Shot Fallacy Classifiers? `EMNLP2024`
+   
+   *Fengjun Pan, Xiaobao Wu, Zongrui Li, Anh Tuan Luu* [paper](https://arxiv.org/abs/2410.15050)
+7. Detecting Errors through Ensembling Prompts (DEEP): An End-to-End LLM Framework for Detecting Factual Errors `EMNLP2024`
+   
+   *Alex Chandler, Devesh Surve, Hui Su* [paper](https://arxiv.org/abs/2406.13009)
+9. Split and Merge: Aligning Position Biases in LLM-based Evaluators `EMNLP2024`
+    
+    *Zongjie Li, Chaozheng Wang, Pingchuan Ma, Daoyuan Wu, Shuai Wang, Cuiyun Gao, Yang Liu* [paper](https://aclanthology.org/2024.emnlp-main.621/)
+11. Annotation alignment: Comparing LLM and human annotations of conversational safety `EMNLP2024`
+
+    *Rajiv Movva, Pang Wei Koh, Emma Pierson* [paper](https://arxiv.org/abs/2406.06369)
+13. Humans or LLMs as the Judge? A Study on Judgement Bias `EMNLP2024`
+
+    *Guiming Hardy Chen, Shunian Chen, Ziche Liu, Feng Jiang, Benyou Wang* [paper](https://aclanthology.org/2024.emnlp-main.474/)
+15. RealVul: Can We Detect Vulnerabilities in Web Applications with LLM? `EMNLP2024`
+
+    *Di Cao, Yong Liao, Xiuwei Shang* [paper](https://arxiv.org/abs/2410.07573)
+17. A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data `EMNLP2024`
+
+    *Ishaan Watts, Varun Gumma, Aditya Yadavalli, Vivek Seshadri, Manohar Swaminathan, Sunayana Sitaram* [paper](https://aclanthology.org/2024.emnlp-main.451/)    
+19. Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment `EMNLP2024`
+
+    *Vyas Raina, Adian Liusie, Mark Gales* [paper](https://arxiv.org/abs/2402.14016)
+21. RepEval: Effective Text Evaluation with LLM Representation `EMNLP2024`
+
+    *Shuqian Sheng, Yi Xu, Tianhang Zhang, Zanwei Shen, Luoyi Fu, Jiaxin Ding, Lei Zhou, Xiaoying Gan, Xinbing Wang, Chenghu Zhou* [paper](https://arxiv.org/abs/2404.19563)
+23. Efficient LLM Comparative Assessment: A Product of Experts Framework for Pairwise Comparisons `EMNLP2024`
+
+    *Adian Liusie, Vatsal Raina, Yassir Fathullah, Mark Gales* [paper](https://arxiv.org/abs/2405.05894)
+25. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales `EMNLP2024`
+
+    *Tianyang Xu, Shujin Wu, Shizhe Diao, Xiaoze Liu, Xingyao Wang, Yangyi Chen, Jing Gao* [paper](https://arxiv.org/abs/2405.20974)
+27. An LLM Feature-based Framework for Dialogue Constructiveness Assessment `EMNLP2024`
+
+    *Lexin Zhou, Youmna Farag, Andreas Vlachos* [paper](https://arxiv.org/abs/2406.14760)
+29. I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation `EMNLP2024`
+
+    *Cheng-Kuang Wu, Zhi Rui Tam, Chao-Chung Wu, Chieh-Yen Lin, Hung-yi Lee, Yun-Nung Chen* [paper](https://arxiv.org/abs/2407.14767)
+31. Multi-News+: Cost-efficient Dataset Cleansing via LLM-based Data Annotation `EMNLP2024`
+
+    *Juhwan Choi, Jungmin Yun, Kyohoon Jin, YoungBin Kim* [paper](https://arxiv.org/abs/2404.09682)
+33. Bayesian Calibration of Win Rate Estimation with LLM Evaluators `EMNLP2024`
+
+    *Yicheng Gao, Gonghan Xu, Zhe Wang, Arman Cohan* [paper](https://arxiv.org/abs/2411.04424)
+35. Evaluating Mathematical Reasoning Beyond Accuracy `preprint`
+
+    *Shijie Xia, Xuefeng Li, Yixin Liu, Tongshuang Wu, Pengfei Liu* [paper](https://arxiv.org/abs/2404.05692)
+37. MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models `preprint`
+
+    *Shuai Peng, Di Fu, Liangcai Gao, Xiuqin Zhong, Hongguang Fu, Zhi Tang* [paper](https://arxiv.org/abs/2409.00147)
+39. Beyond Hallucinations: Enhancing LVLMs through Hallucination-Aware Direct Preference Optimization `preprint`
+
+    *Zhiyuan Zhao, Bin Wang, Linke Ouyang, Xiaoyi Dong, Jiaqi Wang, Conghui He* [paper](https://arxiv.org/abs/2311.16839)
+41. LLaVA-RLHF Aligning Large Multimodal Models with Factually Augmented RLHF `ACL 2024 Findings`
+
+    *Zhiqing Sun, Sheng Shen, Shengcao Cao, Haotian Liu, Chunyuan Li, Yikang Shen, Chuang Gan, Liang-Yan Gui, Yu-Xiong Wang, Yiming Yang, Kurt Keutzer, Trevor Darrell* [paper](https://arxiv.org/abs/2309.14525)
+43. Alpagasus: Training A better alpaca with fewer data. `ICLR 2024`
+
+    *Lichang Chen, Shiyang Li, Jun Yan, Hai Wang, Kalpa Gunaratna, Vikas Yadav, Zheng Tang, Vijay Srinivasan, Tianyi Zhou, Heng Huang, Hongxia Jin* [paper](https://arxiv.org/abs/2307.08701)
+45. Concept-skill Transferability-based Data Selection for Large Vision-Language Models `EMNLP 2024`
+
+    *Jaewoo Lee, Boyang Li, Sung Ju Hwang* [paper](https://arxiv.org/abs/2406.10995)
+47. Less is More: High-value Data Selection for Visual Instruction Tuning `preprint`
+
+    *Zikang Liu, Kun Zhou, Wayne Xin Zhao, Dawei Gao, Yaliang Li, Ji-Rong Wen* [paper](https://arxiv.org/abs/2403.09559)
+49. Data-Juicer: A One-Stop Data Processing System for Large Language Models `preprint`
+
+    *Daoyuan Chen, Yilun Huang, Zhijian Ma, Hesen Chen, Xuchen Pan, Ce Ge, Dawei Gao, Yuexiang Xie, Zhaoyang Liu, Jinyang Gao, Yaliang Li, Bolin Ding, Jingren Zhou* [paper](https://arxiv.org/abs/2309.02033)
+51. ShareGPT4V: Improving Large Multi-Modal Models with Better Captions `ECCV 2024`
+
+    *Lin Chen, Jinsong Li, Xiaoyi Dong, Pan Zhang, Conghui He, Jiaqi Wang, Feng Zhao, Dahua Lin* [paper](https://arxiv.org/abs/2311.12793)
+53. Visual Instruction Tuning `NIPS 2023`
+
+    *Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee* [paper](https://arxiv.org/abs/2304.08485)
+55. VBench: Comprehensive Benchmark Suite for Video Generative Models `preprint`
+
+    *Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu* [paper](https://arxiv.org/abs/2311.17982)
+57. RevisEval: Improving LLM-as-a-Judge via Response-Adapted References `preprint`
+
+    *Qiyuan Zhang, Yufei Wang, Tiezheng YU, Yuxin Jiang, Chuhan Wu, Liangyou Li, Yasheng Wang, Xin Jiang, Lifeng Shang, Ruiming Tang, Fuyuan Lyu, Chen Ma* [paper](https://arxiv.org/abs/2410.05193)
+59. Agent-as-a-Judge: Evaluate Agents with Agents `preprint`
+
+    *Mingchen Zhuge, Changsheng Zhao, Dylan Ashley, Wenyi Wang, Dmitrii Khizbullin, Yunyang Xiong, Zechun Liu, Ernie Chang, Raghuraman Krishnamoorthi, Yuandong Tian, Yangyang Shi, Vikas Chandra, Jürgen Schmidhuber* [paper](https://arxiv.org/abs/2410.10934)
+    

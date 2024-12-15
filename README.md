@@ -45,6 +45,12 @@ Feel free to cite if you find our survey is useful for your research:
 
    *Aman Singh Thakur, Kartik Choudhary, Venkat Srinik Ramayapally, Sankaran Vaidyanathan, Dieuwke Hupkes* [[Paper](https://arxiv.org/abs/2406.12624)] [[Code](https://github.com/UMass-Meta-LLM-Eval/llm_eval)], 2024.07
 
+2. **JUSTICE OR PREJUDICE? QUANTIFYING BIASES IN LLM-AS-A-JUDGE** `Preprint`
+   *Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, Nitesh V Chawla, Xiangliang Zhang* [[paper](https://arxiv.org/abs/2410.02736)]
+
+3. **Argument Quality Assessment in the Age of Instruction-Following Large Language Models** `COLING2024`
+   *Henning Wachsmuth, Gabriella Lapesa, Elena Cabrio, Anne Lauscher, Joonsuk Park, Eva Maria Vecchi, Serena Villata, Timon Ziegenbein1* [[paper](https://aclanthology.org/2024.lrec-main.135.pdf)]
+   
 #### 2.Analysis
 
 1. **A Comprehensive Analysis of the Effectiveness of Large Language Models as Automatic Dialogue Evaluators** `AAAI 2024`

@@ -1,8 +1,17 @@
-# Awesome LLM-as-a-Judge
+<p align="center">
+    <img src="./images/title-llm-as-a-judge.png" width="70%"> <br>
+</p>
+<div align="center" style="font-family: Arial, sans-serif;">
+  <p>
+    <a href=https://awesome-llm-as-a-judge.github.io/" style="text-decoration: none; font-weight: bold;">🌻 Homepage</a> •
+    <a href="#paperlist" style="text-decoration: none; font-weight: bold;"> 📖 Paper List</a> •
+    <a href="https://awesome-llm-as-a-judge.github.io/#meta-evaluation" style="text-decoration: none; font-weight: bold;">📊 Meta-eval</a> •
+    <a href="https://arxiv.org/abs/2411.15594" style="text-decoration: none; font-weight: bold;">🌟 Arxiv </a> •
+    <a href="docs/document.md" style="text-decoration: none; font-weight: bold;"> 🔗 Talk </a>
+  </p>
+</div>
 
 This repo include the papers discussed in our survey paper *[A Survey on LLM-as-a-Judge](https://arxiv.org/abs/2411.15594)*
-
-
 
 ### Reference
 
@@ -17,15 +26,21 @@ Feel free to cite if you find our survey is useful for your research:
 }
 ```
 
+### 🔔 News  
+
+🔥 [2025-01-28]  We added analysis on **LLM-as-a-Judge** and **o1-like Reasoning Enhancement**, as well as [**meta-evaluation**](https://awesome-llm-as-a-judge.github.io/#meta-evaluation) results on **o1-mini**, **Gemini-2.0-Flash-Thinking-1219**, and **DeepSeek-R1**!  
+
+🌟 [2025-01-16] We shared and discussed the **methodologies**, **applications (Finance, RAG, and Synthetic Data)**, and future research directions of **LLM-as-a-Judge** at BAAI Talk! 🤗  [[**Replay**](https://event.baai.ac.cn/activities/878)]  [[**Methodology**](https://ticket-assets.baai.ac.cn/uploads/%E6%96%B9%E6%B3%95%E8%AE%BA%E3%80%81%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9C%AA%E6%9D%A5%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E6%8E%A2%E8%AE%A8.pdf)]  [[**RAG & Synthetic Data**](https://ticket-assets.baai.ac.cn/uploads/LLM-as-a-Judge-%E5%BE%90%E9%93%96%E6%99%8B.pdf)]  
+
+🚀 [2024-11-23]  We released [**A Survey on LLM-as-a-Judge**](https://arxiv.org/pdf/2411.15594), exploring **LLMs as reliable, scalable evaluators** and outlining **key challenges and future directions**!  
+
+### Overview of LLM-as-a-Judge 
+
+![overview](./images/paper_structure.png)
 
 
-### Overview of LLM-as-a-Judge
 
-![overview](./images/overview.jpg)
-
-
-
-### Evaluation Pipelines of LLM-as-a-Judge
+### Evaluation Pipelines
 
 ![evaluation_pipeline](./images/evaluation_pipeline.jpg)
 
@@ -37,7 +52,7 @@ Feel free to cite if you find our survey is useful for your research:
 
 
 
-### Paper List
+### Paper List{#paperlist}
 
 #### 1.Survey
 
@@ -377,7 +392,7 @@ Feel free to cite if you find our survey is useful for your research:
    
    *Alex Chandler, Devesh Surve, Hui Su* [paper](https://arxiv.org/abs/2406.13009)
 9. Split and Merge: Aligning Position Biases in LLM-based Evaluators `EMNLP2024`
-    
+   
     *Zongjie Li, Chaozheng Wang, Pingchuan Ma, Daoyuan Wu, Shuai Wang, Cuiyun Gao, Yang Liu* [paper](https://aclanthology.org/2024.emnlp-main.621/)
 11. Annotation alignment: Comparing LLM and human annotations of conversational safety `EMNLP2024`
 
@@ -454,4 +469,3 @@ Feel free to cite if you find our survey is useful for your research:
 59. Agent-as-a-Judge: Evaluate Agents with Agents `preprint`
 
     *Mingchen Zhuge, Changsheng Zhao, Dylan Ashley, Wenyi Wang, Dmitrii Khizbullin, Yunyang Xiong, Zechun Liu, Ernie Chang, Raghuraman Krishnamoorthi, Yuandong Tian, Yangyang Shi, Vikas Chandra, Jürgen Schmidhuber* [paper](https://arxiv.org/abs/2410.10934)
-    

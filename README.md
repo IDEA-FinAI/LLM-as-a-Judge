@@ -4,7 +4,7 @@
 <div align="center" style="font-family: Arial, sans-serif;">
   <p>
     <a href=https://awesome-llm-as-a-judge.github.io/" style="text-decoration: none; font-weight: bold;">🌻 Homepage</a> •
-    <a href="#paperlist" style="text-decoration: none; font-weight: bold;"> 📖 Paper List</a> •
+    <a href="#paper-list" style="text-decoration: none; font-weight: bold;"> 📖 Paper List</a> •
     <a href="https://awesome-llm-as-a-judge.github.io/#meta-evaluation" style="text-decoration: none; font-weight: bold;">📊 Meta-eval</a> •
     <a href="https://arxiv.org/abs/2411.15594" style="text-decoration: none; font-weight: bold;">🌟 Arxiv </a> •
     <a href="docs/document.md" style="text-decoration: none; font-weight: bold;"> 🔗 Talk </a>
@@ -51,8 +51,8 @@ Feel free to cite if you find our survey is useful for your research:
 ![improvement_strategy](./images/improvement_strategy.jpg)
 
 
-
-### Paper List{#paperlist}
+<a id="paper-list"></a>
+### Paper List
 
 #### 1.Survey
 

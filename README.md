@@ -3,7 +3,7 @@
 </p>
 <div align="center" style="font-family: Arial, sans-serif;">
   <p>
-    <a href=https://awesome-llm-as-a-judge.github.io/" style="text-decoration: none; font-weight: bold;">🌻 Homepage</a> •
+    <a href="https://awesome-llm-as-a-judge.github.io/" style="text-decoration: none; font-weight: bold;">🌻 Homepage</a> •
     <a href="#paper-list" style="text-decoration: none; font-weight: bold;"> 📖 Paper List</a> •
     <a href="https://awesome-llm-as-a-judge.github.io/#meta-evaluation" style="text-decoration: none; font-weight: bold;">📊 Meta-eval</a> •
     <a href="https://arxiv.org/abs/2411.15594" style="text-decoration: none; font-weight: bold;">🌟 Arxiv </a> •

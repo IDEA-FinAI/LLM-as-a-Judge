@@ -113,11 +113,11 @@ Feel free to cite if you find our survey is useful for your research:
 
 ##### Generating scores
 
-- **A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models** `NAACL 2024`
+- **A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models** `NAACL` `2024`
 
   Jaylen Jones, Lingbo Mo, Eric Fosler-Lussier, and Huan Sun. [[Paper](https://aclanthology.org/2024.naacl-short.14)]
 
-- **Generative judge for evaluating alignment.** `ArXiv preprint 2023`
+- **Generative judge for evaluating alignment.** `ArXiv preprint` `2023`
 
   Junlong Li, Shichao Sun, Weizhe Yuan, Run-Ze Fan, Hai Zhao, and Pengfei Liu. [[Paper](https://arxiv.org/abs/2310.05470)]
 

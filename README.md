@@ -56,12 +56,12 @@ Feel free to cite if you find our survey is useful for your research:
 
 [A Survey on LLM-as-a-Judge](#Awesome LLM-as-a-Judge)
 
-- [Reference](##Reference)
-- [Overview of LLM-as-a-Judge](##Overview of LLM-as-a-Judge)
-- [Evaluation Pipelines of LLM-as-a-Judge](#Evaluation Pipelines of LLM-as-a-Judge)
-- [Improvement Strategies for LLM-as-a-Judge](#Improvement Strategies for LLM-as-a-Judge)
-- [Table of Content](#Table of Content)
-- [Paper List](##Paper List)
+- [Reference](#Reference)
+- [Overview of LLM-as-a-Judge](#Overview-of-LLM-as-a-Judge)
+- [Evaluation Pipelines of LLM-as-a-Judge](#Evaluation-Pipelines-of-LLM-as-a-Judge)
+- [Improvement Strategies for LLM-as-a-Judge](#Improvement-Strategies-for-LLM-as-a-Judge)
+- [Table of Content](#Table-of-Content)
+- [Paper List](#Paper-List)
   - [1 What is LLM-as-a-Judge?](#1-What is LLM-as-a-Judge?)
   - [2 How to use LLM-as-a-Judge?](#2-How to use LLM-as-a-Judge?)
     - [2.1 In-Context Learning](#21-In-Context Learning)

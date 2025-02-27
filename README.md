@@ -54,7 +54,7 @@ Feel free to cite if you find our survey is useful for your research:
 
 ## Table of Content
 
-[A Survey on LLM-as-a-Judge](#Awesome LLM-as-a-Judge)
+[A Survey on LLM-as-a-Judge](#Awesome-LLM-as-a-Judge)
 
 - [Reference](#Reference)
 - [Overview of LLM-as-a-Judge](#Overview-of-LLM-as-a-Judge)
@@ -91,7 +91,7 @@ Feel free to cite if you find our survey is useful for your research:
       - [Conversion of evaluation tasks](#Conversion-of-evaluation-tasks)
       - [Constraining outputs in structured formats](#Constraining-outputs-in-structured-formats)
       - [Providing evaluations with explanations](#Providing-evaluations-with-explanations)
-    - [3.2 Improvement Strategy of LLMs' Abilities](#32-Improvement-Strategy-of-LLMs' Abilities)
+    - [3.2 Improvement Strategy of LLMs' Abilities](#32-Improvement-Strategy-of-LLMs'-Abilities)
       - [Fine-tuning via Meta Evaluation Dataset](#Fine-tuning-via-Meta-Evaluation-Dataset)
       - [Iterative Optimization Based on Feedbacks](#Iterative-Optimization-Based-on-Feedbacks)
     - [3.3 Optimization Strategy of Final Results](#33-Optimization-Strategy-of-Final-Results)

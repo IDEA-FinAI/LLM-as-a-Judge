@@ -48,424 +48,500 @@ Feel free to cite if you find our survey is useful for your research:
 
 ### Improvement Strategies for LLM-as-a-Judge
 
-![improvement_strategy](./images/improvement_strategy.jpg)
+![improvement_strategy](./images/improvement_strategy.png)
 
 
-<a id="paper-list"></a>
-### Paper List
 
-#### 1.Survey
+## Table of Content
 
-1. **Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges** `Preprint`
+[A Survey on LLM-as-a-Judge](#Awesome LLM-as-a-Judge)
 
-   *Aman Singh Thakur, Kartik Choudhary, Venkat Srinik Ramayapally, Sankaran Vaidyanathan, Dieuwke Hupkes* [[Paper](https://arxiv.org/abs/2406.12624)] [[Code](https://github.com/UMass-Meta-LLM-Eval/llm_eval)], 2024.07
+- [Reference](##Reference)
+- [Overview of LLM-as-a-Judge](##Overview of LLM-as-a-Judge)
+- [Evaluation Pipelines of LLM-as-a-Judge](#Evaluation Pipelines of LLM-as-a-Judge)
+- [Improvement Strategies for LLM-as-a-Judge](#Improvement Strategies for LLM-as-a-Judge)
+- [Table of Content](#Table of Content)
+- [Paper List](##Paper List)
+  - [1 What is LLM-as-a-Judge?](#1-What is LLM-as-a-Judge?)
+  - [2 How to use LLM-as-a-Judge?](#2-How to use LLM-as-a-Judge?)
+    - [2.1 In-Context Learning](#21-In-Context Learning)
+      - [Generating scores](#Generating scores)
+      - [Solving Yes/No questions](#Solving Yes/No questions)
+      - [Conducting pairwise comparisons](#Conducting pairwise comparisons)
+      - [Making multiple-choice selections](#Making multiple-choice selections)
+    - [2.2 Model Selection](#22-Model Selection)
+      - [General LLM](#General LLM)
+      - [Fine-tuned LLM](#Fine-tuned LLM)
+    - [2.3 Post-processing Method](#2.3 Post-processing Method)
+      - [Extracting specific tokens](#Extracting specific tokens)
+      - [Constrained decoding](#Constrained decoding)
+      - [Normalizing the output logits](#Normalizing the output logits)
+      - [Selecting sentences](#Selecting sentences)
+    - [2.4 Evaluation Pipeline](#2.4 Evaluation Pipeline)
+      - [LLM-as-a-Judge for Models](#LLM-as-a-Judge for Models)
+      - [LLM-as-a-Judge for Data](#LLM-as-a-Judge for Data)
+      - [LLM-as-a-Judge for Agents](#LLM-as-a-Judge for Agents)
+      - [LLM-as-a-Judge for Reasoning/Thinking](#LLM-as-a-Judge for Reasoning/Thinking)
+  - [3 How to improve LLM-as-a-Judge?](#3-How to improve LLM-as-a-Judge?)
+    - [3.1 Design Strategy of Evaluation Prompts](#3.1 Design Strategy of Evaluation Prompts)
+      - [Few-shot promping](#Few-shot promping)
+      - [Evaluation steps decomposition](#Evaluation steps decomposition)
+      - [Evaluation criteria decomposition](#Evaluation criteria decomposition)
+      - [Shuffling contents](#Shuffling contents)
+      - [Conversion of evaluation tasks](#Conversion of evaluation tasks)
+      - [Constraining outputs in structured formats](#Constraining outputs in structured formats)
+      - [Providing evaluations with explanations](#Providing evaluations with explanations)
+    - [3.2 Improvement Strategy of LLMs' Abilities](#3.2 Improvement Strategy of LLMs' Abilities)
+      - [Fine-tuning via Meta Evaluation Dataset](#Fine-tuning via Meta Evaluation Dataset)
+      - [Iterative Optimization Based on Feedbacks](#Iterative Optimization Based on Feedbacks)
+    - [3.3 Optimization Strategy of Final Results](#3.3 Optimization Strategy of Final Results)
+      - [Summarize by multiple rounds](#Summarize by multiple rounds)
+      - [Vote by multiple LLMs](#Vote by multiple LLMs)
+      - [Score smoothing](#Score smoothing)
+      - [Self validation](#Self validation)
 
-2. **JUSTICE OR PREJUDICE? QUANTIFYING BIASES IN LLM-AS-A-JUDGE** `Preprint`
-   
-   *Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, Nitesh V Chawla, Xiangliang Zhang* [[paper](https://arxiv.org/abs/2410.02736)]
 
-4. **Argument Quality Assessment in the Age of Instruction-Following Large Language Models** `COLING2024`
-   
-   *Henning Wachsmuth, Gabriella Lapesa, Elena Cabrio, Anne Lauscher, Joonsuk Park, Eva Maria Vecchi, Serena Villata, Timon Ziegenbein1* [[paper](https://aclanthology.org/2024.lrec-main.135.pdf)]
-   
-#### 2.Analysis
 
-1. **A Comprehensive Analysis of the Effectiveness of Large Language Models as Automatic Dialogue Evaluators** `AAAI 2024`
+## Paper List
 
-   *Chen Zhang, Luis Fernando D'Haro, Yiming Chen, Malu Zhang, Haizhou Li* [[Paper](https://arxiv.org/abs/2312.15407)] [[Code](https://github.com/e0397123/comp-analysis)], 2024.01
+### 1 What is LLM-as-a-Judge?
 
-2. **Large Language Models Cannot Self-Correct Reasoning Yet** `ICLR 2024`
+### 2 How to use LLM-as-a-Judge?
 
-   *Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu Steven Zheng, Adams Wei Yu, Xinying Song, Denny Zhou* [[Paper](https://arxiv.org/abs/2310.01798)], 2024.05
+#### 2.1 In-Context Learning
 
-3. **Large Language Models are not Fair Evaluators** `ACL 2024`
+##### Generating scores
 
-   *Peiyi Wang, Lei Li, Liang Chen, Zefan Cai, Dawei Zhu, Binghuai Lin, Yunbo Cao, Lingpeng Kong, Qi Liu, Tianyu Liu, Zhifang Sui* [[Paper](https://aclanthology.org/2024.acl-long.511)] [[Code](https://github.com/i-Eval/FairEval)], 2023.08
+- **A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models** `NAACL 2024`
 
-4. **Subtle Biases Need Subtler Measures: Dual Metrics for Evaluating Representative and Affinity Bias in Large Language Models** `ACL 2024`
+  Jaylen Jones, Lingbo Mo, Eric Fosler-Lussier, and Huan Sun. [[Paper](https://aclanthology.org/2024.naacl-short.14)]
 
-   *Abhishek Kumar, Sarfaroz Yunusov, Ali Emami* [[Paper](https://arxiv.org/abs/2405.14555)] [[Code](https://github.com/akkeshav/subtleBias)], 2024.06
+- **Generative judge for evaluating alignment.** `ArXiv preprint 2023`
 
-5. **Are LLM-based Evaluators Confusing NLG Quality Criteria** `ACL 2024`
+  Junlong Li, Shichao Sun, Weizhe Yuan, Run-Ze Fan, Hai Zhao, and Pengfei Liu. [[Paper](https://arxiv.org/abs/2310.05470)]
 
-   *Xinyu Hu, Mingqi Gao, Sen Hu, Yang Zhang, Yicheng Chen, Teng Xu, Xiaojun Wan* [[Paper](https://aclanthology.org/2024.acl-long.516)] [[Code](https://github.com/herrxy/LLM-evaluator-reliability)], 2024.06
+- **Judgelm: Fine-tuned large language models are scalable judges.** `ArXiv preprint` `2023`
 
-6. **Likelihood-based Mitigation of Evaluation Bias in Large Language Models** `ACL 2024 findings`
+  Lianghui Zhu, Xinggang Wang, and Xinlong Wang. [[Paper](https://arxiv.org/abs/2310.17631)]
 
-   *Masanari Ohi, Masahiro Kaneko, Ryuto Koike, Mengsay Loem, Naoaki Okazaki* [[Paper](https://aclanthology.org/2024.findings-acl.193)], 2024.05
+- **Large Language Models are Better Reasoners with Self-Verification.** `EMNLP findings` `2023`
 
-7. **Can Large Language Models Be an Alternative to Human Evaluations?** `ACL 2023`
+  Yixuan Weng, Minjun Zhu, Fei Xia, Bin Li, Shizhu He, Shengping Liu, Bin Sun, Kang Liu, and Jun Zhao. [[Paper](https://aclanthology.org/2023.findings-emnlp.167)]
 
-   *Cheng-Han Chiang, Hung-yi Lee* [[Paper](https://aclanthology.org/2023.acl-long.870)], 2023.05
+- **Benchmarking Foundation Models with Language-Model-as-an-Examiner.** `NeurIPS` `2023`
 
-8. **Evaluation Metrics in the Era of GPT-4: Reliably Evaluating Large Language Models on Sequence to Sequence Tasks** `EMNLP 2023`
+  Yushi Bai, Jiahao Ying, Yixin Cao, Xin Lv, Yuze He, Xiaozhi Wang, Jifan Yu, Kaisheng Zeng, Yijia Xiao, Haozhe Lyu, Jiayin Zhang, Juanzi Li, and Lei Hou. [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/f64e55d03e2fe61aa4114e49cb654acb-Paper-Datasets_and_Benchmarks.html)]
 
-   *Andrea Sottana, Bin Liang, Kai Zou, Zheng Yuan* [[Paper](https://aclanthology.org/2023.emnlp-main.543)] [[Code](https://github.com/protagolabs/seq2seq_llm_evaluation)], 2023.10
+- **Human-like summarization evaluation with chatgpt.** `ArXiv preprint` `2023`
 
-9. **Is ChatGPT a Good NLG Evaluator? A Preliminary Study** `NewSumm @ EMNLP 2023`
+  Mingqi Gao, Jie Ruan, Renliang Sun, Xunjian Yin, Shiping Yang, and Xiaojun Wan. [[Paper](https://arxiv.org/abs/2304.02554)]
 
-   *Jiaan Wang, Yunlong Liang, Fandong Meng, Zengkui Sun, Haoxiang Shi, Zhixu Li, Jinan Xu, Jianfeng Qu, Jie Zhou* [[Paper](https://arxiv.org/abs/2303.04048)] [[Code](https://github.com/krystalan/chatgpt_as_nlg_evaluator)], 2023.10
+##### Solving Yes/No questions
 
-10. **Comparing Two Model Designs for Clinical Note Generation; Is an LLM a Useful Evaluator of Consistency?**  `NAACL 2024 findings`
+- **Reflexion: language agents with verbal reinforcement learning.** `NeurIPS` `2023`
 
-    *Nathan Brake, Thomas Schaaf* [[Paper](https://aclanthology.org/2024.findings-naacl.25)], 2024.04
+  Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. [[Paper](https://papers.nips.cc/paper_files/paper/2023/file/1b44b878bb782e6954cd888628510e90-Paper-Conference.html)]
 
-11. **Is LLM a Reliable Reviewer? A Comprehensive Evaluation of LLM on Automatic Paper Reviewing Tasks** `COLING 2024`
+- **MacGyver: Are Large Language Models Creative Problem Solvers?** `NAACL` `2024`
 
-    *Ruiyang Zhou, Lu Chen, Kai Yu* [[Paper](https://aclanthology.org/2024.lrec-main.816)] [[Dataset](https://huggingface.co/datasets/zhouruiyang/RR-MCQ)], 2024.05
+  Yufei Tian, Abhilasha Ravichander, Lianhui Qin, Ronan Le Bras, Raja Marjieh, Nanyun Peng, Yejin Choi, Thomas Griffiths, and Faeze Brahman. [[Paper](https://aclanthology.org/2024.naacl-long.297)]
 
-12. **Exploring the Use of Large Language Models for Reference-Free Text Quality Evaluation: An Empirical Study** `Preprint`
+- **Think-on-graph: Deep and responsible reasoning of large language model with knowledge graph.** `ArXiv preprint` `2023`
 
-    *Yi Chen, Rui Wang, Haiyun Jiang, Shuming Shi, Ruifeng Xu* [[Paper](https://arxiv.org/abs/2304.00723)] [[Code](https://github.com/MilkWhite/LLMs_for_Reference_Free_Text_Quality_Evaluation)], 2023.09
+  Jiashuo Sun, Chengjin Xu, Lumingyuan Tang, Saizhuo Wang, Chen Lin, Yeyun Gong, Heung-Yeung Shum, and Jian Guo. [[Paper](https://arxiv.org/abs/2307.07697)]
 
-13. **Humans or LLMs as the Judge? A Study on Judgement Biases** `Preprint`
+##### Conducting pairwise comparisons
 
-    *Guiming Hardy Chen, Shunian Chen, Ziche Liu, Feng Jiang, Benyou Wang* [[Paper](https://arxiv.org/abs/2402.10669)], 2024.06
+- **Large Language Models are Effective Text Rankers with Pairwise Ranking Prompting.** `NAACL findings` `2024`
 
-14. **On the Limitations of Fine-tuned Judge Models for LLM Evaluation** `Preprint`
+  Zhen Qin, Rolf Jagerman, Kai Hui, Honglei Zhuang, Junru Wu, Le Yan, Jiaming Shen, Tianqi Liu, Jialu Liu, Donald Metzler, Xuanhui Wang, and Michael Bendersky. [[Papaer](https://aclanthology.org/2024.findings-naacl.97)]
 
-    *Hui Huang, Yingqi Qu, Hongli Zhou, Jing Liu, Muyun Yang, Bing Xu, Tiejun Zhao* [[Paper](https://arxiv.org/abs/2403.02839)] [[Code](https://github.com/HuihuiChyan/UnlimitedJudge)], 2024.06
+- **Aligning with human judgement: The role of pairwise preference in large language model evaluators. ** `COLM` `2024`
 
-15. **Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment** `Preprint`
+  Yinhong Liu, Han Zhou, Zhijiang Guo, Ehsan Shareghi, Ivan Vulic, Anna Korhonen, and Nigel Collier. [[Paper](https://arxiv.org/abs/2403.16950)]
 
-    *Vyas Raina, Adian Liusie, Mark Gales* [[Paper](https://arxiv.org/abs/2402.14016)] [[Code](https://github.com/rainavyas/attack-comparative-assessment)], 2024.07
+- **LLM Comparative Assessment: Zero-shot NLG Evaluation through Pairwise Comparisons using Large Language Models.** `EACL` `2024`
 
-16. **Systematic Evaluation of LLM-as-a-Judge in LLM Alignment Tasks: Explainable Metrics and Diverse Prompt Templates** `Preprint`
+  Adian Liusie, Potsawee Manakul, and Mark Gales. [[Paper](https://aclanthology.org/2024.eacl-long.8)]
 
-    *Hui Wei, Shenghua He, Tian Xia, Andy Wong, Jingyang Lin, Mei Han* [[Paper](https://arxiv.org/abs/2408.13006)] [[Code](https://github.com/shenghh2015/llm-judge-eval)], 2024.08
+- **Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.** `NeurIPS` `2023`
 
-#### 3.Auto-Evaluator
+  Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)]
 
-1. **On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs** `ICLR 2024 (oral)`
+- **Rrhf: Rank responses to align language models with human feedback without tears.** `ArXiv preprint` `2023`
 
-   *Jen-tse Huang, Wenxuan Wang, Eric John Li, Man Ho Lam, Shujie Ren, Youliang Yuan, Wenxiang Jiao, Zhaopeng Tu, Michael R. Lyu* [[Paper](https://openreview.net/pdf?id=H3UayAQWoE)] [[Code](https://github.com/CUHK-ARISE/PsychoBench)], 2023.12
+  Zheng Yuan, Hongyi Yuan, Chuanqi Tan, Wei Wang, Songfang Huang, and Fei Huang. [[Paper](https://arxiv.org/abs/2304.05302)]
 
-2. **Generative Judge for Evaluating Alignment** `ICLR 2024`
+- **PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization.** `ArXiv preprint` `2023`
 
-   *Junlong Li, Shichao Sun, Weizhe Yuan, Run-Ze Fan, Hai Zhao, Pengfei Liu* [[Paper](https://arxiv.org/abs/2310.05470)] [[Code](https://github.com/GAIR-NLP/auto-j)], 2023.12
+  Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoya Jiang, Rui Xie, Jindong Wang, Xing Xie, et al. 2023. [[Paper](https://arxiv.org/abs/2306.05087)]
 
-3. **PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization** `ICLR 2024`
+- **Human-like summarization evaluation with chatgpt.** `ArXiv preprint` `2023`
 
-   *Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoya Jiang, Rui Xie, Jindong Wang, Xing Xie, Wei Ye, Shikun Zhang, Yue Zhang* [[Paper](https://arxiv.org/abs/2306.05087)] [[Code](https://github.com/WeOpenML/PandaLM)], 2024.05
+  Mingqi Gao, Jie Ruan, Renliang Sun, Xunjian Yin, Shiping Yang, and Xiaojun Wan. [[Paper](https://arxiv.org/abs/2304.02554)]
 
-4. **Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph** `ICLR 2024`
+##### Making multiple-choice selections
 
-   *Jiashuo Sun, Chengjin Xu, Lumingyuan Tang, Saizhuo Wang, Chen Lin, Yeyun Gong, Lionel M. Ni, Heung-Yeung Shum, Jian Guo* [[Paper](https://arxiv.org/abs/2307.07697)] [[Code](https://github.com/IDEA-FinAI/ToG)], 2024.05
+- 
 
-5. **HD-Eval: Aligning Large Language Model Evaluators Through Hierarchical Criteria Decomposition** `ACL 2024`
+#### 2.2 Model Selection
 
-   *Yuxuan Liu, Tianchi Yang, Shaohan Huang, Zihan Zhang, Haizhen Huang, Furu Wei, Weiwei Deng, Feng Sun, Qi Zhang* [[Paper](https://aclanthology.org/2024.acl-long.413)], 2024.02
+##### General LLM
 
-6. **Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation** `ACL 2024`
+- **Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.** `NeurIPS` `2023`
 
-   *Xiaoying Zhang, Baolin Peng, Ye Tian, Jingyan Zhou, Lifeng Jin, Linfeng Song, Haitao Mi, Helen Meng* [[Paper](https://aclanthology.org/2024.acl-long.107)] [[Code](https://github.com/zhangxy-2019/Self-Alignment-for-Factuality)], 2024.06
+  Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)]
 
-7. **FLEUR: An Explainable Reference-Free Evaluation Metric for Image Captioning Using a Large Multimodal Model** `ACL 2024`
+- **AlpacaEval: An Automatic Evaluator of Instruction-following Models.**  `2023`
 
-   *Yebin Lee, Imseong Park, Myungjoo Kang* [[Paper](https://aclanthology.org/2024.acl-long.205)] [[Code](https://github.com/Yebin46/FLEUR)], 2024.06
+  Xuechen Li, Tianyi Zhang, Yann Dubois, Rohan Taori, Ishaan Gulrajani, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto.  [[Code](https://github.com/tatsu-lab/alpaca_eval?tab=readme-ov-file)]
 
-8. **KIEval: A Knowledge-grounded Interactive Evaluation Framework for Large Language Models ** `ACL 2024`
+##### Fine-tuned LLM
 
-   *Zhuohao Yu, Chang Gao, Wenjin Yao, Yidong Wang, Wei Ye, Jindong Wang, Xing Xie, Yue Zhang, Shikun Zhang* [[Paper](https://aclanthology.org/2024.acl-long.325/)] [[Code](https://github.com/zhuohaoyu/KIEval)], 2024.06
+- **PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization.** `ArXiv preprint` `2023`
 
-9. **ProxyQA: An Alternative Framework for Evaluating Long-Form Text Generation with Large Language Models** `ACL 2024`
+  Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoya Jiang, Rui Xie, Jindong Wang, Xing Xie, et al. 2023. [[Paper](https://arxiv.org/abs/2306.05087)]
 
-   *Haochen Tan, Zhijiang Guo, Zhan Shi, Lu Xu, Zhili Liu, Yunlong Feng, Xiaoguang Li, Yasheng Wang, Lifeng Shang, Qun Liu, Linqi Song* [[Paper](https://aclanthology.org/2024.acl-long.368)] [[Code](https://github.com/Namco0816/ProxyQA)], 2024.06
+- **Judgelm: Fine-tuned large language models are scalable judges.** `ArXiv preprint` `2023`
 
-10. **CritiqueLLM: Towards an Informative Critique Generation Model for Evaluation of Large Language Model Generation** `ACL 2024`
+  Lianghui Zhu, Xinggang Wang, and Xinlong Wang. [[Paper](https://arxiv.org/abs/2310.17631)]
 
-    *Pei Ke, Bosi Wen, Andrew Feng, Xiao Liu, Xuanyu Lei, Jiale Cheng, Shengyuan Wang, Aohan Zeng, Yuxiao Dong, Hongning Wang, Jie Tang, Minlie Huang* [[Paper](https://aclanthology.org/2024.acl-long.704)] [[Code](https://github.com/thu-coai/CritiqueLLM)], 2024.06
+- **Generative judge for evaluating alignment.** `ArXiv preprint` `2023`
 
-11. **Aligning Large Language Models by On-Policy Self-Judgment** `ACL 2024`
+  Junlong Li, Shichao Sun, Weizhe Yuan, Run-Ze Fan, Hai Zhao, and Pengfei Liu. [[Paper](https://arxiv.org/abs/2310.05470)]
 
-    *Sangkyu Lee, Sungdong Kim, Ashkan Yousefpour, Minjoon Seo, Kang Min Yoo, Youngjae Yu* [[Paper](https://aclanthology.org/2024.acl-long.617)] [[Code](https://github.com/oddqueue/self-judge)], 2024.06
+- **Prometheus: Inducing Fine-grained Evaluation Capability in Language Models.** `ArXiv preprint` `2023`
 
-12. **FineSurE: Fine-grained Summarization Evaluation using LLMs** `ACL 2024`
+  Seungone Kim, Jamin Shin, Yejin Cho, Joel Jang, Shayne Longpre, Hwaran Lee, Sangdoo Yun, Seongjin Shin, Sungdong Kim, James Thorne, et al. [[Paper](https://arxiv.org/abs/2310.08491)]
 
-    *Hwanjun Song, Hang Su, Igor Shalyminov, Jason Cai, Saab Mansour* [[Paper](https://aclanthology.org/2024.acl-long.51/)] [[Code](https://github.com/DISL-Lab/FineSurE-ACL24)], 2024.07
+#### 2.3 Post-processing Method
 
-13. **SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models** `ACL 2024 findings`
+##### Extracting specific tokens
 
-    *Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, Jing Shao* [[Paper](https://arxiv.org/abs/2402.05044)] [[Code](https://github.com/OpenSafetyLab/SALAD-BENCH)], 2024.06
+- **xFinder: Robust and Pinpoint Answer Extraction for Large Language Models.** `ArXiv preprint` `2024`
 
-14. **LLM-EVAL: Unified Multi-Dimensional Automatic Evaluation for Open-Domain Conversations with Large Language Models** `NLP4ConvAI @ ACL 2023`
+  Qingchen Yu, Zifan Zheng, Shichao Song, Zhiyu Li, Feiyu Xiong, Bo Tang, and Ding Chen. [[Paper](https://arxiv.org/abs/2405.11874)]
 
-    *Yen-Ting Lin, Yun-Nung Chen* [[Paper](https://aclanthology.org/2023.nlp4convai-1.5)], 2023.05
+- **MacGyver: Are Large Language Models Creative Problem Solvers?** `NAACL` `2024`
 
-15. **G-Eval: NLG Evaluation using Gpt-4 with Better Human Alignment** `EMNLP 2023`
+  Yufei Tian, Abhilasha Ravichander, Lianhui Qin, Ronan Le Bras, Raja Marjieh, Nanyun Peng, Yejin Choi, Thomas Griffiths, and Faeze Brahman. [[Paper](https://aclanthology.org/2024.naacl-long.297)]
 
-    *Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, Chenguang Zhu* [[Paper](https://aclanthology.org/2023.emnlp-main.153)] [[Code](https://github.com/nlpyang/geval)], 2023.05
+##### Constrained decoding
 
-16. **TrueTeacher: Learning Factual Consistency Evaluation with Large Language Models** `EMNLP 2023`
+- **Guiding LLMs the right way: fast, non-invasive constrained generation.** `ICML` `2024`
 
-    *Zorik Gekhman, Jonathan Herzig, Roee Aharoni, Chen Elkind, Idan Szpektor* [[Paper](https://aclanthology.org/2023.emnlp-main.127)] [[Code](https://github.com/google-research/google-research/tree/master/true_teacher)], 2023.10
+  Luca Beurer-Kellner, Marc Fischer, and Martin Vechev. [[Paper](https://dl.acm.org/doi/10.5555/3692070.3692216)]
 
-17. **INSTRUCTSCORE: Towards Explainable Text Generation Evaluation with Automatic Feedback **`EMNLP 2023`
+- **XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models.** `ArXiv preprint` `2024`
 
-    *Wenda Xu, Danqing Wang, Liangming Pan, Zhenqiao Song, Markus Freitag, William Wang, Lei Li* [[Paper](https://aclanthology.org/2023.emnlp-main.365)], 2023.10
+  Yixin Dong, Charlie F. Ruan, Yaxing Cai, Ruihang Lai, Ziyi Xu, Yilong Zhao, and Tianqi Chen. [[Paper](https://arxiv.org/abs/2411.15100)]
 
-18. **FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation ** `EMNLP 2023`
+- **SGLang: Efficient Execution of Structured Language Model Programs.** `NeurIPS` `2025`
 
-    *Sewon Min, Kalpesh Krishna, Xinxi Lyu, Mike Lewis, Wen-tau Yih, Pang Koh, Mohit Iyyer, Luke Zettlemoyer, Hannaneh Hajishirzi* [[Paper](https://aclanthology.org/2023.emnlp-main.741)] [[Code](https://github.com/shmsw25/FActScore)], 2023.10
+  Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E. Gonzalez, Clark Barrett, and Ying Sheng. [[Paper](https://proceedings.neurips.cc/paper_files/paper/2024/hash/724be4472168f31ba1c9ac630f15dec8-Abstract-Conference.html)]
 
-19. **Revisiting Automated Topic Model Evaluation with Large Language Models** `EMNLP 2023 (short)`
+##### Normalizing the output logits
 
-    *Dominik Stammbach, Vilém Zouhar, Alexander Hoyle, Mrinmaya Sachan, Elliott Ash* [[Paper](https://aclanthology.org/2023.emnlp-main.581)] [[Code](https://github.com/dominiksinsaarland/evaluating-topic-model-output)], 2023.10
+- **Reasoning with Language Model is Planning with World Model.** `EMNLP` `2023`
 
-20. **CLAIR: Evaluating Image Captions with Large Language Models** `EMNLP 2023 (short)`
+  Shibo Hao, Yi Gu, Haodi Ma, Joshua Hong, Zhen Wang, Daisy Wang, and Zhiting Hu. [[Paper](https://aclanthology.org/2023.emnlp-main.507)]
 
-    *David Chan, Suzanne Petryk, Joseph Gonzalez, Trevor Darrell, John Canny* [[Paper](https://aclanthology.org/2023.emnlp-main.841)] [[Code](https://github.com/davidmchan/clair)], 2023.10
+- **Speculative rag: Enhancing retrieval augmented generation through drafting.** `ArXiv preprint` `2024`
 
-21. **GENRES: Rethinking Evaluation for Generative Relation Extraction in the Era of Large Language Models** `NAACL 2024`
+  Zilong Wang, Zifeng Wang, Long Le, Huaixiu Steven Zheng, Swaroop Mishra, Vincent Perot, Yuwei Zhang, Anush Mattapalli, Ankur Taly, Jingbo Shang, et al. [[Paper](https://arxiv.org/abs/2407.08223)]
 
-    *Pengcheng Jiang, Jiacheng Lin, Zifeng Wang, Jimeng Sun, Jiawei Han* [[Paper](https://aclanthology.org/2024.naacl-long.155)] [[Code](https://github.com/pat-jj/GenRES)], 2024.02
+- **Agent-as-a-Judge: Evaluate Agents with Agents. ** `ArXiv preprint` `2024`
 
-22. **GPTScore: Evaluate as You Desire**  `NAACL 2024`
+  Mingchen Zhuge, Changsheng Zhao, Dylan Ashley, Wenyi Wang, Dmitrii Khizbullin, Yunyang Xiong, Zechun Liu, Ernie Chang, Raghuraman Krishnamoorthi, Yuandong Tian, et al. [[Paper](https://arxiv.org/abs/2410.10934)]
 
-    *Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, Pengfei Liu* [[Paper](https://aclanthology.org/2024.naacl-long.365)] [[Code](https://github.com/jinlanfu/GPTScore)], 2023.02
+##### Selecting sentences
 
-23. **Branch-Solve-Merge Improves Large Language Model Evaluation and Generation**  `NAACL 2024`
+- **Reasoning with Language Model is Planning with World Model.** `EMNLP` `2023`
 
-    *Swarnadeep Saha, Omer Levy, Asli Celikyilmaz, Mohit Bansal, Jason Weston, Xian Li* [[Paper](https://aclanthology.org/2024.naacl-long.462)], 2024.06
+  Shibo Hao, Yi Gu, Haodi Ma, Joshua Hong, Zhen Wang, Daisy Wang, and Zhiting Hu. [[Paper](https://aclanthology.org/2023.emnlp-main.507)]
 
-24. **A Multi-Aspect Framework for Counter Narrative Evaluation using Large Language Models**  `NAACL 2024 (short)`
+#### 2.4 Evaluation Pipeline
 
-    *Jaylen Jones, Lingbo Mo, Eric Fosler-Lussier, Huan Sun* [[Paper](https://aclanthology.org/2024.naacl-short.14)] [[Code](https://github.com/OSU-NLP-Group/LLM-CN-Eval)], 2024.03
+##### LLM-as-a-Judge for Models
 
-25. **SocREval: Large Language Models with the Socratic Method for Reference-free Reasoning Evaluation**  `NAACL 2024 findings`
+- **AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback.** `NeurIPS` `2023`
 
-    *Hangfeng He, Hongming Zhang, Dan Roth* [[Paper](https://aclanthology.org/2024.findings-naacl.175)] [[Code](https://github.com/HornHehhf/SocREval)], 2024.06
+  Yann Dubois, Chen Xuechen Li, Rohan Taori, Tianyi Zhang, Ishaan Gulrajani, Jimmy Ba, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/5fc47800ee5b30b8777fdd30abcaaf3b-Abstract-Conference.html)]
 
-26. **Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators** `COLM 2024`
+- **Large language models are not fair evaluators.** `ACL` `2024`
 
-    *Yinhong Liu, Han Zhou, Zhijiang Guo, Ehsan Shareghi, Ivan Vulić, Anna Korhonen, Nigel Collier* [[Paper](https://arxiv.org/abs/2403.16950)] [[Code](https://github.com/cambridgeltl/PairS)], 2024.08
+  Peiyi Wang, Lei Li, Liang Chen, Dawei Zhu, Binghuai Lin, Yunbo Cao, Qi Liu, Tianyu Liu, and Zhifang Sui. [[Paper](https://aclanthology.org/2024.acl-long.511)]
 
-27. **LLMScore: Unveiling the Power of Large Language Models in Text-to-Image Synthesis Evaluation** `NeurIPS 2023`
+- **Wider and deeper llm networks are fairer llm evaluators.** `ArXiv preprint` `2023`
 
-    *Yujie Lu, Xianjun Yang, Xiujun Li, Xin Eric Wang, William Yang Wang* [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/47f30d67bce3e9824928267e9355420f-Abstract-Conference.html)] [[Code](https://github.com/YujieLu10/LLMScore)], 2023.05
+  Xinghua Zhang, Bowen Yu, Haiyang Yu, Yangyu Lv, Tingwen Liu, Fei Huang, Hongbo Xu, and Yongbin Li. [[Paper](https://arxiv.org/abs/2308.01862)]
 
-28. **Evaluating and Improving Tool-Augmented Computation-Intensive Math Reasoning** `NeurIPS 2023`
+- **Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.** `NeurIPS` `2023`
 
-    *Beichen Zhang, Kun Zhou, Xilin Wei, Xin Zhao, Jing Sha, Shijin Wang, Ji-Rong Wen* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/4a47dd69242d5af908cdd5d51c971cbf-Abstract-Datasets_and_Benchmarks.html)] [[Code](https://github.com/RUCAIBox/CARP)], 2023.06
+  Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)]
 
-29. **RRHF: Rank Responses to Align Language Models with Human Feedback without tears** `NeurIPS 2023`
+- **SelFee: Iterative Self-Revising LLM Empowered by Self-Feedback Generation. ** `Blog` `2023`
 
-    *Zheng Yuan, Hongyi Yuan, Chuanqi Tan, Wei Wang, Songfang Huang, Fei Huang* [[Paper](https://arxiv.org/abs/2304.05302)] [[Code](https://github.com/GanjinZero/RRHF)], 2023.10
+  Seonghyeon Ye, Yongrae Jo, Doyoung Kim, Sungdong Kim, Hyeonbin Hwang, and Minjoon Seo. [[Blog](https://kaistai.github.io/SelFee)]
 
-30. **Reflexion: Language Agents with Verbal Reinforcement Learning** `NeuralIPS 2023`
+- **Shepherd: A Critic for Language Model Generation.** `ArXiv preprint` `2023`
 
-    *Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, Shunyu Yao* [[Paper](https://arxiv.org/abs/2303.11366)] [[Code](https://github.com/noahshinn024/reflexion)], 2023.10
+  Tianlu Wang, Ping Yu, Xiaoqing Ellen Tan, Sean O’Brien, Ramakanth Pasunuru, Jane Dwivedi-Yu, Olga Golovneva, Luke Zettlemoyer, Maryam Fazel-Zarandi, and Asli Celikyilmaz. [[Paper](https://arxiv.org/abs/2308.04592)]
 
-31. **Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation** `NeurIPS 2023`
+- **PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization.** `ArXiv preprint` `2023`
 
-    *Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, Lingming Zhang* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/43e9d647ccd3e4b7b5baab53f0368686-Abstract-Conference.html)] [[Code](https://github.com/evalplus/evalplus)], 2023.10
+  Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoya Jiang, Rui Xie, Jindong Wang, Xing Xie, et al. 2023. [[Paper](https://arxiv.org/abs/2306.05087)]
 
-32. **Self-Evaluation Guided Beam Search for Reasoning** `NeurIPS 2023`
+##### LLM-as-a-Judge for Data
 
-    *Yuxi Xie, Kenji Kawaguchi, Yiran Zhao, James Xu Zhao, Min-Yen Kan, Junxian He, Michael Xie* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/81fde95c4dc79188a69ce5b24d63010b-Abstract-Conference.html)] [[Code](https://github.com/YuxiXie/SelfEval-Guided-Decoding)], 2023.10
+- **RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment.** `ArXiv preprint` `2023`
 
-33. **Benchmarking Foundation Models with Language-Model-as-an-Examiner** `NeurIPS 2023`
+  Hanze Dong, Wei Xiong, Deepanshu Goyal, Rui Pan, Shizhe Diao, Jipeng Zhang, Kashun Shum, and Tong Zhang. [[Paper](https://arxiv.org/abs/2304.06767)]
 
-    *Yushi Bai, Jiahao Ying, Yixin Cao, Xin Lv, Yuze He, Xiaozhi Wang, Jifan Yu, Kaisheng Zeng, Yijia Xiao, Haozhe Lyu, Jiayin Zhang, Juanzi Li, Lei Hou* [[Paper](https://arxiv.org/abs/2306.04181)] [[Code](http://lmexam.xlore.cn/)], 2023.11
+- **Rrhf: Rank responses to align language models with human feedback without tears.** `ArXiv preprint` `2023`
 
-34. **Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena** `NeurIPS 2023`
+  Zheng Yuan, Hongyi Yuan, Chuanqi Tan, Wei Wang, Songfang Huang, and Fei Huang. [[Paper](https://arxiv.org/abs/2304.05302)]
 
-    *Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric Xing, Hao Zhang, Joseph E. Gonzalez, Ion Stoica* [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)] [[Code](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge)], 2023.12
+- **Stanford Alpaca: An Instruction-following LLaMA model.** `2023`
 
-35. **Vicuna: An open-source chatbot impressing gpt-4 with 90%* chatgpt quality** `Blog`
+  Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li, Carlos Guestrin, Percy Liang, and Tatsunori B. Hashimoto. [[Code](https://github.com/tatsu-lab/stanford_alpaca)]
 
-    *The Vicuna Team* [[Code](https://github.com/lm-sys/FastChat)] [[Blog](https://lmsys.org/blog/2023-03-30-vicuna/)], 2023.03
+- **Languages are rewards: Hindsight finetuning using human feedback.** `ArXiv preprint` `2023`
 
-36. **Human-like summarization evaluation with chatgpt** `Preprint`
+  Hao Liu, Carmelo Sferrazza, and Pieter Abbeel. [[Paper](https://arxiv.org/abs/2302.02676)]
 
-    *Mingqi Gao, Jie Ruan, Renliang Sun, Xunjian Yin, Shiping Yang, Xiaojun Wan* [[Paper](https://arxiv.org/abs/2304.02554)], 2023.04
+- **The Wisdom of Hindsight Makes Language Models Better Instruction Followers.** `PMLR` `2023`
 
-37. **WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct** `Preprint`
+  Tianjun Zhang, Fangchen Liu, Justin Wong, Pieter Abbeel, and Joseph E. Gonzalez. [[Paper](https://proceedings.mlr.press/v202/zhang23ab.html)]
 
-    *Haipeng Luo, Qingfeng Sun, Can Xu, Pu Zhao, Jianguang Lou, Chongyang Tao, Xiubo Geng, Qingwei Lin, Shifeng Chen, Dongmei Zhang* [[Paper](https://arxiv.org/abs/2308.09583)] [[Code](https://github.com/nlpxucan/WizardLM)] [[Model](https://huggingface.co/WizardLM)], 2023.08
+- **Principle-Driven Self-Alignment of Language Models from Scratch with Minimal Human Supervision. ** `NeurIPS` `2023`
 
-38. **Judgelm: Fine-tuned large language models are scalable judges ** `Preprint`
+  Zhiqing Sun, Yikang Shen, Qinhong Zhou, Hongxin Zhang, Zhenfang Chen, David D. Cox, Yiming Yang, and Chuang Gan. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/0764db1151b936aca59249e2c1386101-Abstract-Conference.html)]
 
-    *Lianghui Zhu, Xinggang Wang, Xinlong Wang* [[Paper](https://arxiv.org/abs/2310.17631)] [[Code](https://github.com/baaivision/JudgeLM)], 2023.10
+- **Wizardmath: Empowering mathematical reasoning for large language models via**
 
-39. **Goal-Oriented Prompt Attack and Safety Evaluation for LLMs** `Preprint`
+  **reinforced evol-instruct. ** `ArXiv preprint` `2023`
 
-    *Chengyuan Liu, Fubang Zhao, Lizhi Qing, Yangyang Kang, Changlong Sun, Kun Kuang, Fei Wu* [[Paper](https://arxiv.org/abs/2309.11830)] [[Code](https://github.com/liuchengyuan123/CPAD)], 2023.12
+  Haipeng Luo, Qingfeng Sun, Can Xu, Pu Zhao, Jianguang Lou, Chongyang Tao, Xiubo Geng, Qingwei Lin, Shifeng Chen, and Dongmei Zhang. [[Paper](https://arxiv.org/abs/2308.09583)]
 
-40. **JADE: A Linguistics-based Safety Evaluation Platform for Large Language Models** `Preprint`
+- **Self-taught evaluators.** `ArXiv preprint` `2024`
 
-    *Mi Zhang, Xudong Pan, Min Yang* [[Paper](https://arxiv.org/abs/2311.00286)] [[Code](https://github.com/whitzard-ai/jade-db)], 2023.12
+  Tianlu Wang, Ilia Kulikov, Olga Golovneva, Ping Yu, Weizhe Yuan, Jane Dwivedi-Yu, Richard Yuanzhe Pang, Maryam Fazel-Zarandi, Jason Weston, and Xian Li. [[Paper](https://arxiv.org/abs/2408.02666)]
 
-41. **Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators** `Preprint`
+- **Holistic analysis of hallucination in gpt-4v (ision): Bias and interference challenges.** `ArXiv preprint` `2023`
 
-    *Yann Dubois, Balázs Galambosi, Percy Liang, Tatsunori B. Hashimoto* [[Paper](https://arxiv.org/abs/2404.04475)] [[Code](https://github.com/tatsu-lab/alpaca_eval)], 2024.04
+  Chenhang Cui, Yiyang Zhou, Xinyu Yang, Shirley Wu, Linjun Zhang, James Zou, and Huaxiu Yao. [[Paper](https://arxiv.org/abs/2311.03287)]
 
-42. **OffsetBias: Leveraging Debiased Data for Tuning Evaluators** `Preprint`
+- **Evaluating Object Hallucination in Large Vision-Language Models.** `EMNLP` `2023`
 
-    *Junsoo Park, Seungyeon Jwa, Meiying Ren, Daeyoung Kim, Sanghyuk Choi* [[Paper](https://www.arxiv.org/abs/2407.06551)] [[Code](https://github.com/ncsoft/offsetbias)], 2024.07
+  Yifan Li, Yifan Du, Kun Zhou, Jinpeng Wang, Xin Zhao, and Ji-Rong Wen. [[Paper](https://aclanthology.org/2023.emnlp-main.20/)]
 
-43. **DHP Benchmark: Are LLMs Good NLG Evaluators?** `Preprint`
+- **Evaluation and analysis of hallucination in large vision-language models.** `ArXiv preprint` `2023`
 
-    *Yicheng Wang, Jiayi Yuan, Yu-Neng Chuang, Zhuoer Wang, Yingchi Liu, Mark Cusick, Param Kulkarni, Zhengping Ji, Yasser Ibrahim, Xia Hu* [[Paper](https://arxiv.org/abs/2408.13704)], 2024.08
+  Junyang Wang, Yiyang Zhou, Guohai Xu, Pengcheng Shi, Chenlin Zhao, Haiyang Xu, Qinghao Ye, Ming Yan, Ji Zhang, Jihua Zhu, et al. [[Paper](https://arxiv.org/abs/2308.15126)]
 
-44. **Generative Verifiers: Reward Modeling as Next-Token Prediction** `Preprint`
+- **Aligning large multimodal models with factually augmented rlhf.** `ArXiv preprint` `2023`
 
-    *Lunjun Zhang, Arian Hosseini, Hritik Bansal, Mehran Kazemi, Aviral Kumar, Rishabh Agarwal* [[Paper](https://arxiv.org/abs/2408.15240)], 2024.08
+  Zhiqing Sun, Sheng Shen, Shengcao Cao, Haotian Liu, Chunyuan Li, Yikang Shen, Chuang Gan, Liang-Yan Gui, Yu-Xiong Wang, Yiming Yang, et al. [[Paper](https://arxiv.org/abs/2309.14525)]
 
-45. **Towards Leveraging Large Language Models for Automated Medical Q&A Evaluation** `Preprint`
+- **MLLM-as-a-Judge: Assessing Multimodal LLM-as-a-Judge with Vision-Language Benchmark.** `ICML` `2024`
 
-    *Jack Krolik, Herprit Mahal, Feroz Ahmad, Gaurav Trivedi, Bahador Saket* [[Paper](https://arxiv.org/abs/2409.01941)], 2024.09
+  Dongping Chen, Ruoxi Chen, Shilin Zhang, Yaochen Wang, Yinuo Liu, Huichi Zhou, Qihui Zhang, Yao Wan, Pan Zhou, and Lichao Sun. [[Paper](https://openreview.net/forum?id=dbFEFHAD79)]
 
-46. **LLMs as Evaluators: A Novel Approach to Evaluate Bug Report Summarization** `Preprint`
+##### LLM-as-a-Judge for Agents
 
-    *Abhishek Kumar, Sonia Haiduc, Partha Pratim Das, Partha Pratim Chakrabart*i [[Paper](https://arxiv.org/abs/2409.00630)] [[Code](https://bit.ly/3zk7qZr)], 2024.09
+- **Agent-as-a-Judge: Evaluate Agents with Agents. ** `ArXiv preprint` `2024`
 
-## Reasoning
+  Mingchen Zhuge, Changsheng Zhao, Dylan Ashley, Wenyi Wang, Dmitrii Khizbullin, Yunyang Xiong, Zechun Liu, Ernie Chang, Raghuraman Krishnamoorthi, Yuandong Tian, et al. [[Paper](https://arxiv.org/abs/2410.10934)]
 
-1. **Reasoning with Language Model is Planning with World Model** `EMNLP 2023`
+- **Reasoning with Language Model is Planning with World Model.** `EMNLP` `2023`
 
-   *Shibo Hao, Yi Gu, Haodi Ma, Joshua Hong, Zhen Wang, Daisy Wang, Zhiting Hu* [[Paper](https://arxiv.org/abs/2305.14992)] [[Code](https://github.com/Ber666/RAP)] [[Reasoners](https://github.com/Ber666/llm-reasoners)] [[Blog](https://geyuyao.com/post/rap/)], 2023.05
+  Shibo Hao, Yi Gu, Haodi Ma, Joshua Hong, Zhen Wang, Daisy Wang, and Zhiting Hu. [[Paper](https://aclanthology.org/2023.emnlp-main.507)]
 
-2. **Solving Math Word Problems via Cooperative Reasoning induced Language Models** `ACL 2023`
+- **Reflexion: language agents with verbal reinforcement learning.** `NeurIPS` `2023`
 
-   *Xinyu Zhu, Junjie Wang, Lin Zhang, Yuxiang Zhang, Yongfeng Huang, Ruyi Gan, Jiaxing Zhang, Yujiu Yang* [[Paper](https://aclanthology.org/2023.acl-long.245)] [[Code](https://github.com/TianHongZXY/CoRe)], 2023.07
+  Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. [[Paper](https://papers.nips.cc/paper_files/paper/2023/file/1b44b878bb782e6954cd888628510e90-Paper-Conference.pdf)]
 
-3. **Human-like Few-Shot Learning via Bayesian Reasoning over Natural Language** `NeurIPS 2023`
+##### LLM-as-a-Judge for Reasoning/Thinking
 
-   *Kevin Ellis* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/2aa9b18b9ab37b0ab1fdaae46fb781d4-Abstract-Conference.html)] [[Code](https://github.com/ellisk42/humanlike_fewshot_learning)], 2023.09
+- **Towards Reasoning in Large Language Models: A Survey.** `ACL findings` `2023`
 
-4. **Deductive Verification of Chain-of-Thought Reasoning** `NeurIPS 2023`
+  Jie Huang and Kevin Chen-Chuan Chang. [[Paper](https://aclanthology.org/2023.findings-acl.67)]
 
-   *Zhan Ling, Yunhao Fang, Xuanlin Li, Zhiao Huang, Mingu Lee, Roland Memisevic, Hao Su* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/72393bd47a35f5b3bee4c609e7bba733-Abstract-Conference.html)] [[Code](https://github.com/lz1oceani/verify_cot)], 2023.10
+- **Let’s verify step by step.** `ICLR` `2023`
 
-5. **Language Models Can Improve Event Prediction by Few-Shot Abductive Reasoning** `NeurIPS 2023`
+  Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, and Karl Cobbe. [[Paper](https://openreview.net/forum?id=v8L0pN6EOi)]
 
-   *Xiaoming Shi, Siqiao Xue, Kangrui Wang, Fan Zhou, James Zhang, Jun Zhou, Chenhao Tan, Hongyuan Mei* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/5e5fd18f863cbe6d8ae392a93fd271c9-Abstract-Conference.html)] [[Code](https://github.com/iLampard/lamp)], 2023.10
+### 3 How to improve LLM-as-a-Judge?
 
-6. **DDCoT: Duty-Distinct Chain-of-Thought Prompting for Multimodal Reasoning in Language Models** `NeurIPS 2023`
+#### 3.1 Design Strategy of Evaluation Prompts
 
-   *Ge Zheng, Bin Yang, Jiajin Tang, Hong-Yu Zhou, Sibei Yang* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/108030643e640ac050e0ed5e6aace48f-Abstract-Conference.html)] [[Code](https://github.com/SooLab/DDCOT)], 2023.10
+##### Few-shot promping
 
-7. **Learning to Reason and Memorize with Self-Notes** `NeurIPS 2023`
+- **FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation.** `EMNLP` `2023`
 
-   *Jack Lanchantin, Shubham Toshniwal, Jason Weston, arthur szlam, Sainbayar Sukhbaatar* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/274d0146144643ee2459a602123c60ff-Abstract-Conference.html)], 2023.10
+  Sewon Min, Kalpesh Krishna, Xinxi Lyu, Mike Lewis, Wen-tau Yih, Pang Koh, Mohit Iyyer, Luke Zettlemoyer, and Hannaneh Hajishirzi. [[Paper](https://aclanthology.org/2023.emnlp-main.741)]
 
-8. **Symbol-LLM: Leverage Language Models for Symbolic System in Visual Human Activity Reasoning** `NeurIPS 2023`
+- **SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models.** `ACL findings` `2024`
 
-   *Xiaoqian Wu, Yong-Lu Li, Jianhua Sun, Cewu Lu* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/5edb57c05c81d04beb716ef1d542fe9e-Abstract-Conference.html)] [[Code](https://github.com/enlighten0707/Symbol-LLM)], 2023.11
+  Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. [[Paper](https://aclanthology.org/2024.findings-acl.235)]
 
-9. **Tree of Thoughts: Deliberate Problem Solving with Large Language Models** `NeurIPS 2023`
+- **GPTScore: Evaluate as You Desire.** `NAACL` `2024`
 
-   *Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Tom Griffiths, Yuan Cao, Karthik Narasimhan* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/271db9922b8d1f4dd7aaef84ed5ac703-Abstract-Conference.html)] [[Code](https://github.com/princeton-nlp/tree-of-thought-llm)], 2023.12
+  Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, and Pengfei Liu. [[Paper](https://aclanthology.org/2024.naacl-long.365)]
 
-10. **Understanding Social Reasoning in Language Models with Language Models** `NeurIPS 2023`
+##### Evaluation steps decomposition
 
-    *Kanishk Gandhi, Jan-Philipp Fraenken, Tobias Gerstenberg, Noah Goodman* [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/hash/2b9efb085d3829a2aadffab63ba206de-Abstract-Datasets_and_Benchmarks.html)] [[Code](https://github.com/cicl-stanford/procedural-evals-tom)], 2023.12
+- **G-Eval: NLG Evaluation using Gpt-4 with Better Human Alignment.** `EMNLP` `2023`
 
-11. **Automatic model selection with large language models for reasoning** `EMNLP 2023 findings`
+  Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. [[Paper](https://aclanthology.org/2023.emnlp-main.153)]
 
-    *James Zhao, Yuxi Xie, Kenji Kawaguchi, Junxian He, Michael Xie* [[Paper](https://aclanthology.org/2023.findings-emnlp.55/)] [[Code](https://github.com/XuZhao0/Model-Selection-Reasoning)], 2023.10
+- **DHP Benchmark: Are LLMs Good NLG Evaluators?** `ArXiv preprint` `2024`
 
-12. **Everything of Thoughts: Defying the Law of Penrose Triangle for Thought Generation** `Preprint`
+  Yicheng Wang, Jiayi Yuan, Yu-Neng Chuang, Zhuoer Wang, Yingchi Liu, Mark Cusick, Param Kulkarni, Zhengping Ji, Yasser Ibrahim, and Xia Hu. [[Paper](https://arxiv.org/abs/2408.13704)]
 
-    *Ruomeng Ding, Chaoyun Zhang, Lu Wang, Yong Xu, Minghua Ma, Wei Zhang, Si Qin, Saravan Rajmohan, Qingwei Lin, Dongmei Zhang* [[Paper](https://arxiv.org/abs/2311.04254)] [[Code](https://github.com/microsoft/Everything-of-Thoughts-XoT)], 2024.02
+- **SocREval: Large Language Models with the Socratic Method for Reference-free Reasoning Evaluation.** `NAACL findings` `2024`
 
-13. **Math-Shepherd: A Label-Free Step-by-Step Verifier for LLMs in Mathematical Reasoning** `Preprint`
+  Hangfeng He, Hongming Zhang, and Dan Roth. [[Paper](https://aclanthology.org/2024.findings-naacl.175)]
 
-    *Peiyi Wang, Lei Li, Zhihong Shao, R.X. Xu, Damai Dai, Yifei Li, Deli Chen, Y.Wu, Zhifang Sui* [[Paper](https://arxiv.org/abs/2312.08935)], 2024.02
+- **Branch-Solve-Merge Improves Large Language Model Evaluation and Generation.** `NAACL` `2024`
 
-14. **Agent Q: Advanced Reasoning and Learning for Autonomous AI Agents** `Preprint`
+  Swarnadeep Saha, Omer Levy, Asli Celikyilmaz, Mohit Bansal, Jason Weston, and Xian Li. [[Paper](https://aclanthology.org/2024.naacl-long.462)]
 
-    *Pranav Putta, Edmund Mills, Naman Garg, Sumeet Motwani, Chelsea Finn, Divyansh Garg, Rafael Rafailov* [[Paper](https://arxiv.org/abs/2408.07199)], 2024.08
+##### Evaluation criteria decomposition
 
-## New
-1. Finding Blind Spots in Evaluator LLMs with Interpretable Checklists `EMNLP2024`
-   
-   *Sumanth Doddapaneni, Mohammed Safi Ur Rahman Khan, Sshubam Verma, Mitesh M. Khapra* [paper](https://arxiv.org/abs/2406.13439)
-3. BiasAlert: A Plug-and-play Tool for Social Bias Detection in LLMs `EMNLP2024`
-   
-   *Zhiting Fan, Ruizhe Chen, Ruiling Xu, Zuozhu Liu* [paper](https://arxiv.org/abs/2407.10241)
-5. Are LLMs Good Zero-Shot Fallacy Classifiers? `EMNLP2024`
-   
-   *Fengjun Pan, Xiaobao Wu, Zongrui Li, Anh Tuan Luu* [paper](https://arxiv.org/abs/2410.15050)
-7. Detecting Errors through Ensembling Prompts (DEEP): An End-to-End LLM Framework for Detecting Factual Errors `EMNLP2024`
-   
-   *Alex Chandler, Devesh Surve, Hui Su* [paper](https://arxiv.org/abs/2406.13009)
-9. Split and Merge: Aligning Position Biases in LLM-based Evaluators `EMNLP2024`
-   
-    *Zongjie Li, Chaozheng Wang, Pingchuan Ma, Daoyuan Wu, Shuai Wang, Cuiyun Gao, Yang Liu* [paper](https://aclanthology.org/2024.emnlp-main.621/)
-11. Annotation alignment: Comparing LLM and human annotations of conversational safety `EMNLP2024`
+- **HD-Eval: Aligning Large Language Model Evaluators Through Hierarchical Criteria Decomposition.** `ACL` `2024`
 
-    *Rajiv Movva, Pang Wei Koh, Emma Pierson* [paper](https://arxiv.org/abs/2406.06369)
-13. Humans or LLMs as the Judge? A Study on Judgement Bias `EMNLP2024`
+  Yuxuan Liu, Tianchi Yang, Shaohan Huang, Zihan Zhang, Haizhen Huang, Furu Wei, Weiwei Deng, Feng Sun, and Qi Zhang. [[Paper](https://aclanthology.org/2024.acl-long.413)]
 
-    *Guiming Hardy Chen, Shunian Chen, Ziche Liu, Feng Jiang, Benyou Wang* [paper](https://aclanthology.org/2024.emnlp-main.474/)
-15. RealVul: Can We Detect Vulnerabilities in Web Applications with LLM? `EMNLP2024`
+- **Are LLM-based Evaluators Confusing NLG Quality Criteria?** `ACL` `2024`
 
-    *Di Cao, Yong Liao, Xiuwei Shang* [paper](https://arxiv.org/abs/2410.07573)
-17. A Large-Scale Investigation of Human-LLM Evaluator Agreement on Multilingual and Multi-Cultural Data `EMNLP2024`
+  Xinyu Hu, Mingqi Gao, Sen Hu, Yang Zhang, Yicheng Chen, Teng Xu, and Xiaojun Wan. [[Paper](https://aclanthology.org/2024.acl-long.516)]
 
-    *Ishaan Watts, Varun Gumma, Aditya Yadavalli, Vivek Seshadri, Manohar Swaminathan, Sunayana Sitaram* [paper](https://aclanthology.org/2024.emnlp-main.451/)    
-19. Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment `EMNLP2024`
+##### Shuffling contents
 
-    *Vyas Raina, Adian Liusie, Mark Gales* [paper](https://arxiv.org/abs/2402.14016)
-21. RepEval: Effective Text Evaluation with LLM Representation `EMNLP2024`
+- **Large language models are not fair evaluators.** `ACL` `2024`
 
-    *Shuqian Sheng, Yi Xu, Tianhang Zhang, Zanwei Shen, Luoyi Fu, Jiaxin Ding, Lei Zhou, Xiaoying Gan, Xinbing Wang, Chenghu Zhou* [paper](https://arxiv.org/abs/2404.19563)
-23. Efficient LLM Comparative Assessment: A Product of Experts Framework for Pairwise Comparisons `EMNLP2024`
+  Peiyi Wang, Lei Li, Liang Chen, Dawei Zhu, Binghuai Lin, Yunbo Cao, Qi Liu, Tianyu Liu, and Zhifang Sui. [[Paper](https://aclanthology.org/2024.acl-long.511)]
 
-    *Adian Liusie, Vatsal Raina, Yassir Fathullah, Mark Gales* [paper](https://arxiv.org/abs/2405.05894)
-25. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales `EMNLP2024`
+- **Generative judge for evaluating alignment.** `ArXiv preprint` `2023`
 
-    *Tianyang Xu, Shujin Wu, Shizhe Diao, Xiaoze Liu, Xingyao Wang, Yangyi Chen, Jing Gao* [paper](https://arxiv.org/abs/2405.20974)
-27. An LLM Feature-based Framework for Dialogue Constructiveness Assessment `EMNLP2024`
+  Junlong Li, Shichao Sun, Weizhe Yuan, Run-Ze Fan, Hai Zhao, and Pengfei Liu. [[Paper](https://arxiv.org/abs/2310.05470)]
 
-    *Lexin Zhou, Youmna Farag, Andreas Vlachos* [paper](https://arxiv.org/abs/2406.14760)
-29. I Need Help! Evaluating LLM’s Ability to Ask for Users’ Support: A Case Study on Text-to-SQL Generation `EMNLP2024`
+- **Judgelm: Fine-tuned large language models are scalable judges.** `ArXiv preprint` `2023`
 
-    *Cheng-Kuang Wu, Zhi Rui Tam, Chao-Chung Wu, Chieh-Yen Lin, Hung-yi Lee, Yun-Nung Chen* [paper](https://arxiv.org/abs/2407.14767)
-31. Multi-News+: Cost-efficient Dataset Cleansing via LLM-based Data Annotation `EMNLP2024`
+  Lianghui Zhu, Xinggang Wang, and Xinlong Wang. [[Paper](https://arxiv.org/abs/2310.17631)]
 
-    *Juhwan Choi, Jungmin Yun, Kyohoon Jin, YoungBin Kim* [paper](https://arxiv.org/abs/2404.09682)
-33. Bayesian Calibration of Win Rate Estimation with LLM Evaluators `EMNLP2024`
+- **PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization.** `ArXiv preprint` `2023`
 
-    *Yicheng Gao, Gonghan Xu, Zhe Wang, Arman Cohan* [paper](https://arxiv.org/abs/2411.04424)
-35. Evaluating Mathematical Reasoning Beyond Accuracy `preprint`
+  Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoya Jiang, Rui Xie, Jindong Wang, Xing Xie, et al. 2023. [[Paper](https://arxiv.org/abs/2306.05087)]
 
-    *Shijie Xia, Xuefeng Li, Yixin Liu, Tongshuang Wu, Pengfei Liu* [paper](https://arxiv.org/abs/2404.05692)
-37. MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models `preprint`
+##### Conversion of evaluation tasks
 
-    *Shuai Peng, Di Fu, Liangcai Gao, Xiuqin Zhong, Hongguang Fu, Zhi Tang* [paper](https://arxiv.org/abs/2409.00147)
-39. Beyond Hallucinations: Enhancing LVLMs through Hallucination-Aware Direct Preference Optimization `preprint`
+- **Aligning with human judgement: The role of pairwise preference in large language model evaluators. ** `COLM` `2024`
 
-    *Zhiyuan Zhao, Bin Wang, Linke Ouyang, Xiaoyi Dong, Jiaqi Wang, Conghui He* [paper](https://arxiv.org/abs/2311.16839)
-41. LLaVA-RLHF Aligning Large Multimodal Models with Factually Augmented RLHF `ACL 2024 Findings`
+  Yinhong Liu, Han Zhou, Zhijiang Guo, Ehsan Shareghi, Ivan Vulic, Anna Korhonen, and Nigel Collier. [[Paper](https://arxiv.org/abs/2403.16950)]
 
-    *Zhiqing Sun, Sheng Shen, Shengcao Cao, Haotian Liu, Chunyuan Li, Yikang Shen, Chuang Gan, Liang-Yan Gui, Yu-Xiong Wang, Yiming Yang, Kurt Keutzer, Trevor Darrell* [paper](https://arxiv.org/abs/2309.14525)
-43. Alpagasus: Training A better alpaca with fewer data. `ICLR 2024`
+##### Constraining outputs in structured formats
 
-    *Lichang Chen, Shiyang Li, Jun Yan, Hai Wang, Kalpa Gunaratna, Vikas Yadav, Zheng Tang, Vijay Srinivasan, Tianyi Zhou, Heng Huang, Hongxia Jin* [paper](https://arxiv.org/abs/2307.08701)
-45. Concept-skill Transferability-based Data Selection for Large Vision-Language Models `EMNLP 2024`
+- **G-Eval: NLG Evaluation using Gpt-4 with Better Human Alignment.** `EMNLP` `2023`
 
-    *Jaewoo Lee, Boyang Li, Sung Ju Hwang* [paper](https://arxiv.org/abs/2406.10995)
-47. Less is More: High-value Data Selection for Visual Instruction Tuning `preprint`
+  Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. [[Paper](https://aclanthology.org/2023.emnlp-main.153)]
 
-    *Zikang Liu, Kun Zhou, Wayne Xin Zhao, Dawei Gao, Yaliang Li, Ji-Rong Wen* [paper](https://arxiv.org/abs/2403.09559)
-49. Data-Juicer: A One-Stop Data Processing System for Large Language Models `preprint`
+- **DHP Benchmark: Are LLMs Good NLG Evaluators?** `ArXiv preprint` `2024`
 
-    *Daoyuan Chen, Yilun Huang, Zhijian Ma, Hesen Chen, Xuchen Pan, Ce Ge, Dawei Gao, Yuexiang Xie, Zhaoyang Liu, Jinyang Gao, Yaliang Li, Bolin Ding, Jingren Zhou* [paper](https://arxiv.org/abs/2309.02033)
-51. ShareGPT4V: Improving Large Multi-Modal Models with Better Captions `ECCV 2024`
+  Yicheng Wang, Jiayi Yuan, Yu-Neng Chuang, Zhuoer Wang, Yingchi Liu, Mark Cusick, Param Kulkarni, Zhengping Ji, Yasser Ibrahim, and Xia Hu. [[Paper](https://arxiv.org/abs/2408.13704)]
 
-    *Lin Chen, Jinsong Li, Xiaoyi Dong, Pan Zhang, Conghui He, Jiaqi Wang, Feng Zhao, Dahua Lin* [paper](https://arxiv.org/abs/2311.12793)
-53. Visual Instruction Tuning `NIPS 2023`
+- **LLM-Eval: Unified Multi-Dimensional Automatic Evaluation for Open-Domain Conversations with Large Language Models.** `NLP4ConvAI` `2023`
 
-    *Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee* [paper](https://arxiv.org/abs/2304.08485)
-55. VBench: Comprehensive Benchmark Suite for Video Generative Models `preprint`
+  Yen-Ting Lin and Yun-Nung Chen. [[Paper](https://aclanthology.org/2023.nlp4convai-1.5)]
 
-    *Ziqi Huang, Yinan He, Jiashuo Yu, Fan Zhang, Chenyang Si, Yuming Jiang, Yuanhan Zhang, Tianxing Wu, Qingyang Jin, Nattapol Chanpaisit, Yaohui Wang, Xinyuan Chen, Limin Wang, Dahua Lin, Yu Qiao, Ziwei Liu* [paper](https://arxiv.org/abs/2311.17982)
-57. RevisEval: Improving LLM-as-a-Judge via Response-Adapted References `preprint`
+##### Providing evaluations with explanations
 
-    *Qiyuan Zhang, Yufei Wang, Tiezheng YU, Yuxin Jiang, Chuhan Wu, Liangyou Li, Yasheng Wang, Xin Jiang, Lifeng Shang, Ruiming Tang, Fuyuan Lyu, Chen Ma* [paper](https://arxiv.org/abs/2410.05193)
-59. Agent-as-a-Judge: Evaluate Agents with Agents `preprint`
+- **CLAIR: Evaluating Image Captions with Large Language Models.** `EMNLP` `2023`
 
-    *Mingchen Zhuge, Changsheng Zhao, Dylan Ashley, Wenyi Wang, Dmitrii Khizbullin, Yunyang Xiong, Zechun Liu, Ernie Chang, Raghuraman Krishnamoorthi, Yuandong Tian, Yangyang Shi, Vikas Chandra, Jürgen Schmidhuber* [paper](https://arxiv.org/abs/2410.10934)
+  David Chan, Suzanne Petryk, Joseph Gonzalez, Trevor Darrell, and John Canny. [[Paper](https://aclanthology.org/2023.emnlp-main.841)]
+
+- **FLEUR: An Explainable Reference-Free Evaluation Metric for Image Captioning Using a Large Multimodal Model.** `ACL` `2024`
+
+  Yebin Lee, Imseong Park, and Myungjoo Kang. [[Paper](https://aclanthology.org/2024.acl-long.205)]
+
+#### 3.2 Improvement Strategy of LLMs' Abilities
+
+##### Fine-tuning via Meta Evaluation Dataset
+
+- **PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization.** `ArXiv preprint` `2023`
+
+  Yidong Wang, Zhuohao Yu, Zhengran Zeng, Linyi Yang, Cunxiang Wang, Hao Chen, Chaoya Jiang, Rui Xie, Jindong Wang, Xing Xie, et al. 2023. [[Paper](https://arxiv.org/abs/2306.05087)]
+
+- **SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models.** `ACL findings` `2024`
+
+  Lijun Li, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. [[Paper](https://aclanthology.org/2024.findings-acl.235)]
+
+- **Offsetbias: Leveraging debiased data for tuning evaluators.** `ArXiv preprint` `2024`
+
+  Junsoo Park, Seungyeon Jwa, Meiying Ren, Daeyoung Kim, and Sanghyuk Choi. [[Papaer](https://arxiv.org/abs/2407.06551)]
+
+- **Judgelm: Fine-tuned large language models are scalable judges.** `ArXiv preprint` `2023`
+
+  Lianghui Zhu, Xinggang Wang, and Xinlong Wang. [[Paper](https://arxiv.org/abs/2310.17631)]
+
+- **CritiqueLLM: Towards an Informative Critique Generation Model for Evaluation of Large Language Model Generation.** `ACL` `2024`
+
+  Pei Ke, Bosi Wen, Andrew Feng, Xiao Liu, Xuanyu Lei, Jiale Cheng, Shengyuan Wang, Aohan Zeng, Yuxiao Dong, Hongning Wang, et al. [[Paper](https://aclanthology.org/2024.acl-long.704)]
+
+##### Iterative Optimization Based on Feedbacks
+
+- **INSTRUCTSCORE: Towards Explainable Text Generation Evaluation with Automatic Feedback.** `EMNLP` `2023`
+
+  Wenda Xu, Danqing Wang, Liangming Pan, Zhenqiao Song, Markus Freitag, William Wang, and Lei Li. [[Paper](https://aclanthology.org/2023.emnlp-main.365)]
+
+- **Jade: A linguistics-based safety evaluation platform for llm.** `ArXiv preprint` `2023`
+
+  Mi Zhang, Xudong Pan, and Min Yang. [[Paper](https://arxiv.org/abs/2311.00286)]
+
+#### 3.3 Optimization Strategy of Final Results
+
+##### Summarize by multiple rounds
+
+- **Evaluation Metrics in the Era of GPT-4: Reliably Evaluating Large Language Models on Sequence to Sequence Tasks.** `EMNLP` `2023`
+
+  Andrea Sottana, Bin Liang, Kai Zou, and Zheng Yuan. [[Paper](https://aclanthology.org/2023.emnlp-main.543)]
+
+- **On the humanity of conversational ai: Evaluating the psychological portrayal of llms.** `ICLR` `2023`
+
+  Jen-tse Huang, Wenxuan Wang, Eric John Li, Man Ho Lam, Shujie Ren, Youliang Yuan, Wenxiang Jiao, Zhaopeng Tu, and Michael Lyu. [[Paper](https://openreview.net/forum?id=H3UayAQWoE)]
+
+- **Generative judge for evaluating alignment.** `ArXiv preprint` `2023`
+
+  Junlong Li, Shichao Sun, Weizhe Yuan, Run-Ze Fan, Hai Zhao, and Pengfei Liu. [[Paper](https://arxiv.org/abs/2310.05470)]
+
+##### Vote by multiple LLMs
+
+- **Goal-Oriented Prompt Attack and Safety Evaluation for LLMs.** `ArXiv preprint` `2023`
+
+  Chengyuan Liu, Fubang Zhao, Lizhi Qing, Yangyang Kang, Changlong Sun, Kun Kuang, and Fei Wu. [[Paper](https://arxiv.org/abs/2309.11830)]
+
+- **Benchmarking Foundation Models with Language-Model-as-an-Examiner.** `NeurIPS` `2023`
+
+  Yushi Bai, Jiahao Ying, Yixin Cao, Xin Lv, Yuze He, Xiaozhi Wang, Jifan Yu, Kaisheng Zeng, Yijia Xiao, Haozhe Lyu, Jiayin Zhang, Juanzi Li, and Lei Hou. [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/f64e55d03e2fe61aa4114e49cb654acb-Paper-Datasets_and_Benchmarks.pdf)]
+
+##### Score smoothing
+
+- **FLEUR: An Explainable Reference-Free Evaluation Metric for Image Captioning Using a Large Multimodal Model.** `ACL` `2024`
+
+  Yebin Lee, Imseong Park, and Myungjoo Kang. [[Paper](https://aclanthology.org/2024.acl-long.205)]
+
+- **G-Eval: NLG Evaluation using Gpt-4 with Better Human Alignment.** `EMNLP` `2023`
+
+  Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang, Ruochen Xu, and Chenguang Zhu. [[Paper](https://aclanthology.org/2023.emnlp-main.153)]
+
+- **DHP Benchmark: Are LLMs Good NLG Evaluators?** `ArXiv preprint` `2024`
+
+  Yicheng Wang, Jiayi Yuan, Yu-Neng Chuang, Zhuoer Wang, Yingchi Liu, Mark Cusick, Param Kulkarni, Zhengping Ji, Yasser Ibrahim, and Xia Hu. [[Paper](https://arxiv.org/abs/2408.13704)]
+
+##### Self validation
+
+- **TrueTeacher: Learning Factual Consistency Evaluation with Large Language Models.** `EMNLP` `2023`
+
+  Zorik Gekhman, Jonathan Herzig, Roee Aharoni, Chen Elkind, and Idan Szpektor. [[Paper](https://aclanthology.org/2023.emnlp-main.127)]

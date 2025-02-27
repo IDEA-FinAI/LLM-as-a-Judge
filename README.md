@@ -7,9 +7,10 @@
     <a href="#paper-list" style="text-decoration: none; font-weight: bold;"> 📖 Paper List</a> •
     <a href="https://awesome-llm-as-a-judge.github.io/#meta-evaluation" style="text-decoration: none; font-weight: bold;">📊 Meta-eval</a> •
     <a href="https://arxiv.org/abs/2411.15594" style="text-decoration: none; font-weight: bold;">🌟 Arxiv </a> •
-    <a href="docs/document.md" style="text-decoration: none; font-weight: bold;"> 🔗 Talk </a>
+    <a href="https://event.baai.ac.cn/activities/878" style="text-decoration: none; font-weight: bold;"> 🔗 Talk </a>
   </p>
 </div>
+
 
 This repo include the papers discussed in our survey paper *[A Survey on LLM-as-a-Judge](https://arxiv.org/abs/2411.15594)*
 

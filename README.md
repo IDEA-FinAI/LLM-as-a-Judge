@@ -100,6 +100,14 @@ Feel free to cite if you find our survey is useful for your research:
       - [Vote by multiple LLMs](#Vote-by-multiple-LLMs)
       - [Score smoothing](#Score-smoothing)
       - [Self validation](#Self-validation)
+  - [4 How to evaluate LLM-as-a-Judge?](#4-How-to-evaluate-LLM-as-a-Judge?)
+    - [4.1 Basic Metric](#41-Basic-Metric)
+    - [4.2 Bias](#42-Basic)
+      - [Position Bias](#Position-Bias)
+      - [Length Bias](#Length-Bias)
+      - [Self-Enhancement Bias](#Self-Enhancement-Bias)
+      - [Other Bias](#Other-Bias)
+    - [4.3 Adversarial Robustness](#43-Adversarial-Robustness)
 
 
 
@@ -107,7 +115,7 @@ Feel free to cite if you find our survey is useful for your research:
 
 ### 1 What is LLM-as-a-Judge?
 
-### 2 How to use LLM-as-a-Judge?
+### 2 How to use LLM-as-a-Judge? 
 
 #### 2.1 In-Context Learning
 
@@ -546,3 +554,127 @@ Feel free to cite if you find our survey is useful for your research:
 - **TrueTeacher: Learning Factual Consistency Evaluation with Large Language Models.** `EMNLP` `2023`
 
   Zorik Gekhman, Jonathan Herzig, Roee Aharoni, Chen Elkind, and Idan Szpektor. [[Paper](https://aclanthology.org/2023.emnlp-main.127)]
+
+### 4 How to evaluate LLM-as-a-Judge？
+
+#### 4.1 Basic Metric
+
+- **Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges.** `ArXiv preprint` `2024`
+
+  Aman Singh Thakur, Kartik Choudhary, Venkat Srinik Ramayapally, Sankaran Vaidyanathan, and Dieuwke Hupkes. [[Paper](https://arxiv.org/abs/2406.12624)]
+
+- **Benchmarking Foundation Models with Language-Model-as-an-Examiner.** `NeurIPS` `2023`
+
+  Yushi Bai, Jiahao Ying, Yixin Cao, Xin Lv, Yuze He, Xiaozhi Wang, Jifan Yu, Kaisheng Zeng, Yijia Xiao, Haozhe Lyu, Jiayin Zhang, Juanzi Li, and Lei Hou. [[Paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/f64e55d03e2fe61aa4114e49cb654acb-Paper-Datasets_and_Benchmarks.pdf)]
+
+- **Aligning with human judgement: The role of pairwise preference in large language model evaluators. ** `COLM` `2024`
+
+  Yinhong Liu, Han Zhou, Zhijiang Guo, Ehsan Shareghi, Ivan Vulic, Anna Korhonen, and Nigel Collier. [[Paper](https://arxiv.org/abs/2403.16950)]
+
+- *MTBench & Chatbot Arena Conversations*：**Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.** `NeurIPS` `2023`
+
+  Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)]
+
+- *FairEval*：**Large language models are not fair evaluators.** `ACL` `2024`
+
+  Peiyi Wang, Lei Li, Liang Chen, Dawei Zhu, Binghuai Lin, Yunbo Cao, Qi Liu, Tianyu Liu, and Zhifang Sui. [[Paper](https://aclanthology.org/2024.acl-long.511)]
+
+- *LLMBar*：**Evaluating Large Language Models at Evaluating Instruction Following.** `ArXiv preprint` `2023`
+
+  Zhiyuan Zeng, Jiatong Yu, Tianyu Gao, Yu Meng, Tanya Goyal, and Danqi Chen. [[Paper](https://arxiv.org/abs/2310.07641)]
+
+- **MLLM-as-a-Judge: Assessing Multimodal LLM-as-a-Judge with Vision-Language Benchmark.** `ICML` `2024`
+
+  Dongping Chen, Ruoxi Chen, Shilin Zhang, Yaochen Wang, Yinuo Liu, Huichi Zhou, Qihui Zhang, Yao Wan, Pan Zhou, and Lichao Sun. [[Paper](https://openreview.net/forum?id=dbFEFHAD79)]
+
+- **CodeJudge-Eval: Can Large Language Models be Good Judges in Code Understanding?** `COLING` `2025`
+
+  Yuwei Zhao, Ziyang Luo, Yuchen Tian, Hongzhan Lin, Weixiang Yan, Annan Li, and Jing Ma. [[Paper](https://aclanthology.org/2025.coling-main.7)]
+
+- *KUDGE*：**LLM-as-a-Judge & Reward Model: What They Can and Cannot Do.** `ArXiv preprint` `2024`
+
+  Guijin Son, Hyunwoo Ko, Hoyoung Lee, Yewon Kim, and Seunghyeok Hong. [[Paper](https://arxiv.org/abs/2409.11239)]
+
+- *CALM*：**Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge.** `ArXiv preprint` `2024`
+
+  Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, et al. [[Paper](https://arxiv.org/abs/2410.02736)]
+
+- *LLMEval*$^2$：**Wider and deeper llm networks are fairer llm evaluators.** `ArXiv preprint` `2023`
+
+  Xinghua Zhang, Bowen Yu, Haiyang Yu, Yangyu Lv, Tingwen Liu, Fei Huang, Hongbo Xu, and Yongbin Li. [[Paper](https://arxiv.org/abs/2308.01862)]
+
+#### 4.2 Bias
+
+##### Position Bias
+
+- **Judging the Judges: A Systematic Investigation of Position Bias in Pairwise Comparative Assessments by LLMs.** `ArXiv preprint` `2024`
+
+  Lin Shi, Weicheng Ma, and Soroush Vosoughi. [[Paper](https://arxiv.org/abs/2406.07791)]
+
+- **Large language models are not fair evaluators.** `ACL` `2024`
+
+  Peiyi Wang, Lei Li, Liang Chen, Dawei Zhu, Binghuai Lin, Yunbo Cao, Qi Liu, Tianyu Liu, and Zhifang Sui. [[Paper](https://aclanthology.org/2024.acl-long.511)]
+
+- **Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge.** `ArXiv preprint` `2024`
+
+  Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, et al. [[Paper](https://arxiv.org/abs/2410.02736)]
+
+##### Length Bias
+
+- **An Empirical Study of LLM-as-a-Judge for LLM Evaluation: Fine-tuned Judge Model is not a General Substitute for GPT-4** `ArXiv preprint` `2024`
+
+  Hui Huang, Yingqi Qu, Xingyuan Bu, Hongli Zhou, Jing Liu, Muyun Yang, Bing Xu, Tiejun Zhao. [[Paper](https://arxiv.org/abs/2403.02839)]
+
+- **Offsetbias: Leveraging debiased data for tuning evaluators.** `ArXiv preprint` `2024`
+
+  Junsoo Park, Seungyeon Jwa, Meiying Ren, Daeyoung Kim, and Sanghyuk Choi. [[Papaer](https://arxiv.org/abs/2407.06551)]
+
+- **Verbosity Bias in Preference Labeling by Large Language Models.** `ArXiv preprint` `2023`
+
+  Keita Saito, Akifumi Wachi, Koki Wataoka, and Youhei Akimoto. [[Paper](https://arxiv.org/abs/2310.10076)]
+
+##### Self-Enhancement Bias
+
+- **Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge.** `ArXiv preprint` `2024`
+
+  Jiayi Ye, Yanbo Wang, Yue Huang, Dongping Chen, Qihui Zhang, Nuno Moniz, Tian Gao, Werner Geyer, Chao Huang, Pin-Yu Chen, et al. [[Paper](https://arxiv.org/abs/2410.02736)]
+
+- **Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.** `NeurIPS` `2023`
+
+  Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. [[Paper](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html)]
+
+##### Other Bias
+
+- **Humans or LLMs as the Judge? A Study on Judgement Bias.** `EMNLP` `2024`
+
+  Guiming Hardy Chen, Shunian Chen, Ziche Liu, Feng Jiang, Benyou Wang. [[Paper](https://aclanthology.org/2024.emnlp-main.474)]
+
+- **Subtle Biases Need Subtler Measures: Dual Metrics for Evaluating Representative and Affinity Bias in Large Language Models. ** `ACL` `2024`
+
+  Abhishek Kumar, Sarfaroz Yunusov, Ali Emami. [[Paper](https://aclanthology.org/2024.acl-long.23/)]
+
+- **Examining Query Sentiment Bias Effects on Search Results in Large Language Models.** `ESSIR` `2023`
+
+  Alice Li, and Luanne Sinnamon. [[Paper](https://2023.essir.eu/FDIA/papers/FDIA_2023_paper_2.pdf)]
+
+#### 4.3 Adversarial Robustness
+
+- **Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment.** `EMNLP` `2024`
+
+  Vyas Raina, Adian Liusie, Mark Gales. [[Paper](https://aclanthology.org/2024.emnlp-main.427)]
+
+- **Are LLM-Judges Robust to Expressions of Uncertainty? Investigating the effect of Epistemic Markers on LLM-based Evaluation.** `ArXiv preprint` `2024`
+
+  Dongryeol Lee, Yerin Hwang, Yongil Kim, Joonsuk Park, and Kyomin Jung. [[Paper](https://arxiv.org/abs/2410.20774)]
+
+- **Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates.** `ICLR` `2025`
+
+  Xiaosen Zheng, Tianyu Pang, Chao Du, Qian Liu, Jing Jiang, and Min Lin. [[Paper](https://arxiv.org/abs/2410.07137)] 
+
+- **Benchmarking Cognitive Biases in Large Language Models as Evaluators.** `ACL Findings` `2024`
+
+  Ryan Koo, Minhwa Lee, Vipul Raheja, Jong Inn Park, Zae Myung Kim, and Dongyeop Kang. [[Paper](https://aclanthology.org/2024.findings-acl.29)]
+
+- **Baseline Defenses for Adversarial Attacks Against Aligned Language Models.** `ArXiv preprint` `2023`
+
+  Neel Jain, Avi Schwarzschild, Yuxin Wen, Gowthami Somepalli, John Kirchenbauer, Ping-yeh Chiang, Micah Goldblum, Aniruddha Saha, Jonas Geiping, and Tom Goldstein. [[Paper](https://arxiv.org/abs/2309.00614)]

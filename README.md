@@ -126,7 +126,11 @@ Feel free to cite if you find our survey is useful for your research:
       - [AI for Science](#AI-for-Science)
       - [Others](#Others)
   
-  - 
+  - [6 Challenges](#6-Challenges)
+    - [6.1 Reliability](#61-Reliability)
+      - [Overconfidence](#Overconfidence)
+      - [Fairness and Generalization](#Fairness-and-Generalization)
+    - [6.2 Robustness](#62-Robustness)
 
 
 
@@ -1025,3 +1029,31 @@ Feel free to cite if you find our survey is useful for your research:
 - **Can LLM be a Personalized Judge?** `EMNLP findings` `2024`
 
   Yijiang River Dong, Tiancheng Hu, and Nigel Collier. [[Paper](https://aclanthology.org/2024.findings-emnlp.592)]
+
+### 6 Challenges
+
+#### 6.1 Reliability
+
+##### Overconfidence
+
+- **Just Ask for Calibration: Strategies for Eliciting Calibrated Confidence Scores from Language Models Fine-Tuned with Human Feedback.** `EMNLP` `2023`
+
+  Katherine Tian, Eric Mitchell, Allan Zhou, Archit Sharma, Rafael Rafailov, Huaxiu Yao, Chelsea Finn, and Christopher Manning. [[Paper](https://aclanthology.org/2023.emnlp-main.330)]
+
+##### Fairness and Generalization
+
+- 
+
+#### 6.2 Robustness
+
+- **Prompt Packer: Deceiving LLMs through Compositional Instruction with Hidden Attacks.** `ArXiv preprint` `2023`
+
+  Shuyu Jiang, Xingshu Chen, and Rui Tang. [[Paper](https://arxiv.org/abs/2310.10077)]
+
+- **"Do Anything Now": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models.** `CCS` `2024`
+
+  Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. [[Paper](https://dl.acm.org/doi/abs/10.1145/3658644.3670388)]
+
+- **Universal and Transferable Adversarial Attacks on Aligned Language Models.** `ArXiv preprint` `2023`
+
+  Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. [[Paper](https://arxiv.org/abs/2307.15043)]
